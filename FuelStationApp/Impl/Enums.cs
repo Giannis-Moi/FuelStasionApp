@@ -6,5 +6,10 @@ using System.Threading.Tasks;
 
 namespace FuelStationApp.Impl {
     class Enums {
+        public enum ItemsTypeEnum {
+            Fuel,
+            Product,
+            Service
+        }
     }
 }
