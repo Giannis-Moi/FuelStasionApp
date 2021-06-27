@@ -27,21 +27,32 @@ namespace FuelStationApp {
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.getCustomersData = new DevExpress.XtraBars.BarButtonItem();
+            this.ConnectWithDB = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtLog = new System.Windows.Forms.TextBox();
+            this.viewCustomersData = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 12);
+            this.gridControl1.Location = new System.Drawing.Point(0, 156);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(776, 426);
+            this.gridControl1.Size = new System.Drawing.Size(1017, 350);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -55,15 +66,68 @@ namespace FuelStationApp {
             // 
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
-            this.ribbonControl1.ExpandCollapseItem});
+            this.barButtonItem1,
+            this.getCustomersData,
+            this.ConnectWithDB,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.viewCustomersData});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 1;
+            this.ribbonControl1.MaxItemId = 7;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage3,
             this.ribbonPage1,
             this.ribbonPage2});
-            this.ribbonControl1.Size = new System.Drawing.Size(800, 150);
+            this.ribbonControl1.Size = new System.Drawing.Size(1017, 150);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Add Customer";
+            this.barButtonItem1.Id = 1;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // getCustomersData
+            // 
+            this.getCustomersData.Caption = "Get Customers Data";
+            this.getCustomersData.Id = 2;
+            this.getCustomersData.Name = "getCustomersData";
+            this.getCustomersData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.getCustomersData_ItemClick);
+            // 
+            // ConnectWithDB
+            // 
+            this.ConnectWithDB.Caption = "Connect with SQL Server";
+            this.ConnectWithDB.Id = 3;
+            this.ConnectWithDB.Name = "ConnectWithDB";
+            this.ConnectWithDB.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ConnectWithDB_ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Save data to Database";
+            this.barButtonItem4.Id = 4;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Load Data from DB";
+            this.barButtonItem5.Id = 5;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // ribbonPage3
+            // 
+            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup4});
+            this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Text = "FuelStationApp";
+            // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.ConnectWithDB);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
             // ribbonPage1
             // 
@@ -74,8 +138,9 @@ namespace FuelStationApp {
             // 
             // ribbonPageGroup1
             // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.getCustomersData);
+            this.ribbonPageGroup1.ItemLinks.Add(this.viewCustomersData);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
             // ribbonPage2
             // 
@@ -89,11 +154,39 @@ namespace FuelStationApp {
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "ribbonPageGroup2";
             // 
+            // textEdit1
+            // 
+            this.textEdit1.EditValue = "Server=DESKTOP-IAKOVOS;Database=FuelStation;Trusted_Connection=True;";
+            this.textEdit1.Location = new System.Drawing.Point(12, 531);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(993, 20);
+            this.textEdit1.TabIndex = 14;
+            // 
+            // txtLog
+            // 
+            this.txtLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLog.Location = new System.Drawing.Point(12, 557);
+            this.txtLog.Multiline = true;
+            this.txtLog.Name = "txtLog";
+            this.txtLog.Size = new System.Drawing.Size(993, 69);
+            this.txtLog.TabIndex = 15;
+            // 
+            // viewCustomersData
+            // 
+            this.viewCustomersData.Caption = "View Customers Data";
+            this.viewCustomersData.Id = 6;
+            this.viewCustomersData.Name = "viewCustomersData";
+            this.viewCustomersData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.viewCustomersData_ItemClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1017, 628);
+            this.Controls.Add(this.txtLog);
+            this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.gridControl1);
             this.Name = "MainForm";
@@ -101,6 +194,7 @@ namespace FuelStationApp {
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,6 +209,16 @@ namespace FuelStationApp {
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem getCustomersData;
+        private DevExpress.XtraBars.BarButtonItem ConnectWithDB;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private System.Windows.Forms.TextBox txtLog;
+        private DevExpress.XtraBars.BarButtonItem viewCustomersData;
     }
 }
 
