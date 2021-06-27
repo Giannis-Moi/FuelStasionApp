@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\Entity.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +58,7 @@
     <Compile Include="Impl\Enums.cs" />
     <Compile Include="Impl\Items.cs" />
     <Compile Include="Impl\Ledger.cs" />
+    <Compile Include="Impl\Person.cs" />
     <Compile Include="Impl\Transaction.cs" />
     <Compile Include="Impl\TransactionLine.cs" />
     <Compile Include="Program.cs" />

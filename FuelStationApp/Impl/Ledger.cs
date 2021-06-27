@@ -5,6 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace FuelStationApp.Impl {
-    class Ledger {
+  public class Ledger {
     }
 }

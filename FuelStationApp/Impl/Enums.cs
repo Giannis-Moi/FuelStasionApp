@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace FuelStationApp.Impl {
-    class Enums {
+   public class Enums {
         public enum ItemsTypeEnum {
             Fuel,
             Product,

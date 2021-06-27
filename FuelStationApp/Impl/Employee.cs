@@ -5,25 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace FuelStationApp.Impl {
-    class Employee {
-        public Guid ID { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
+    public class Employee: Person {
+     
         public DateTime DateStart { get; set; }
         public DateTime DateEnd { get; set; }
         public decimal Salary { get; set; }
       
 
-        public Employee() {
+        public Employee():base() {
 
         }
-        public Employee(string name, string surname, decimal salary, DateTime datestart, DateTime dateend) {
+        public Employee(decimal salary, DateTime dateStart, DateTime dateEnd):base() {
 
-            ID = Guid.NewGuid();
-            Name = name;
-            Surname = surname;
-            DateStart = datestart;
-            DateEnd = dateend;
+  
+            DateStart = dateStart;
+            DateEnd = dateEnd;
             Salary = salary;
         }
     }
