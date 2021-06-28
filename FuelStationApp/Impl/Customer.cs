@@ -8,12 +8,13 @@ namespace FuelStationApp.Impl {
    public class Customer: Person {
 
      
-        public int CardNumber { get; set; }
+        public string CardNumber { get; set; }
 
         public Customer() { }
 
-        public Customer(int cardnumber) :base() {
-
+        public Customer(string name, string surname, string cardnumber) :base() {
+            Name = name;
+            Surname = surname;
             CardNumber = cardnumber;
         }
     }
