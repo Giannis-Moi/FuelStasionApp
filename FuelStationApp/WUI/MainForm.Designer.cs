@@ -153,7 +153,7 @@ namespace FuelStationApp {
             // 
             // addCustomer
             // 
-            this.addCustomer.Caption = "Add customer";
+            this.addCustomer.Caption = "View/Insert Customers";
             this.addCustomer.Id = 10;
             this.addCustomer.Name = "addCustomer";
             this.addCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addCustomer_ItemClick);

@@ -67,6 +67,36 @@ namespace FuelStationApp.WUI {
         private void gridCustomers_Click(object sender, EventArgs e) {
 
         }
+
+        private void CustomerForm_Load(object sender, EventArgs e) {
+            PopulateDataGridView();
+            ResetFields();
+        }
+
+        private void ResetFields() {
+            ctrlName.Text = String.Empty;
+            ctrlSurname.Text = String.Empty;
+            ctrlCardNumber.Text = String.Empty;
+        }
+
+        private void btndelete_Click(object sender, EventArgs e) {
+            DeleteCustomer();
+        }
+        private void DeleteCustomer() {
+            if (ctrlName.Text == String.Empty && ctrlSurname.Text == String.Empty && ctrlCardNumber.Text == String.Empty) {
+                MessageBox.Show("Enter the Customer's data to delete the Record");
+            }
+            else {
+                Connection.Open();
+                string myquery = "DELETE FROM Customers WHERE CardNumber='" + ctrlCardNumber.Text + "'";
+                SqlCommand cmd = new SqlCommand(myquery, Connection);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Customer Successfully Deleted");
+                Connection.Close();
+                PopulateDataGridView();
+                ResetFields();
+            }
+        }
     }
   
 }
