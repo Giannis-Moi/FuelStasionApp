@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FuelStationApp.WUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,8 @@ using System.Windows.Forms;
 namespace FuelStationApp {
     public partial class MainForm : Form {
 
-        private SqlConnection _SqlConnection;
+        public SqlConnection _SqlConnection;
+        public string ConnectionString { get => textEdit1.Text; set => ConnectionString = value; }
         private DataSet _MasterData = new DataSet();
 
         public MainForm() {
@@ -92,11 +94,20 @@ namespace FuelStationApp {
             gridControl1.DataSource = null;
             gridControl1.Refresh();
 
+        }
+
+        private void addCustomer_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            AddCustomer();
 
         }
-      
 
+        private void AddCustomer() {
+            CustomerForm customerForm = new CustomerForm();
+            _SqlConnection = new SqlConnection(ConnectionString);
+            customerForm.Connection = _SqlConnection;
+            customerForm.ShowDialog();
 
+        }
     }
     
 }

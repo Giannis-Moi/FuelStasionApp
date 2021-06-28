@@ -32,6 +32,11 @@ namespace FuelStationApp {
             this.ConnectWithDB = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.viewCustomersData = new DevExpress.XtraBars.BarButtonItem();
+            this.getEmployeesData = new DevExpress.XtraBars.BarButtonItem();
+            this.viewEmloyeesData = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.addCustomer = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -40,10 +45,6 @@ namespace FuelStationApp {
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.txtLog = new System.Windows.Forms.TextBox();
-            this.viewCustomersData = new DevExpress.XtraBars.BarButtonItem();
-            this.getEmployeesData = new DevExpress.XtraBars.BarButtonItem();
-            this.viewEmloyeesData = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -79,9 +80,10 @@ namespace FuelStationApp {
             this.viewCustomersData,
             this.getEmployeesData,
             this.viewEmloyeesData,
-            this.barButtonItem2});
+            this.barButtonItem2,
+            this.addCustomer});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 10;
+            this.ribbonControl1.MaxItemId = 11;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage3,
@@ -121,6 +123,41 @@ namespace FuelStationApp {
             this.barButtonItem5.Id = 5;
             this.barButtonItem5.Name = "barButtonItem5";
             // 
+            // viewCustomersData
+            // 
+            this.viewCustomersData.Caption = "View Customers Data";
+            this.viewCustomersData.Id = 6;
+            this.viewCustomersData.Name = "viewCustomersData";
+            this.viewCustomersData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.viewCustomersData_ItemClick);
+            // 
+            // getEmployeesData
+            // 
+            this.getEmployeesData.Caption = "Get Employees Data";
+            this.getEmployeesData.Id = 7;
+            this.getEmployeesData.Name = "getEmployeesData";
+            this.getEmployeesData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.getEmployeesData_ItemClick);
+            // 
+            // viewEmloyeesData
+            // 
+            this.viewEmloyeesData.Caption = "View Employees Data";
+            this.viewEmloyeesData.Id = 8;
+            this.viewEmloyeesData.Name = "viewEmloyeesData";
+            this.viewEmloyeesData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.viewEmloyeesData_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Clear Data";
+            this.barButtonItem2.Id = 9;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // addCustomer
+            // 
+            this.addCustomer.Caption = "Add customer";
+            this.addCustomer.Id = 10;
+            this.addCustomer.Name = "addCustomer";
+            this.addCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addCustomer_ItemClick);
+            // 
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -147,6 +184,7 @@ namespace FuelStationApp {
             this.ribbonPageGroup1.ItemLinks.Add(this.getCustomersData);
             this.ribbonPageGroup1.ItemLinks.Add(this.viewCustomersData);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup1.ItemLinks.Add(this.addCustomer, true);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPage2
@@ -180,34 +218,6 @@ namespace FuelStationApp {
             this.txtLog.Name = "txtLog";
             this.txtLog.Size = new System.Drawing.Size(1093, 78);
             this.txtLog.TabIndex = 15;
-            // 
-            // viewCustomersData
-            // 
-            this.viewCustomersData.Caption = "View Customers Data";
-            this.viewCustomersData.Id = 6;
-            this.viewCustomersData.Name = "viewCustomersData";
-            this.viewCustomersData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.viewCustomersData_ItemClick);
-            // 
-            // getEmployeesData
-            // 
-            this.getEmployeesData.Caption = "Get Employees Data";
-            this.getEmployeesData.Id = 7;
-            this.getEmployeesData.Name = "getEmployeesData";
-            this.getEmployeesData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.getEmployeesData_ItemClick);
-            // 
-            // viewEmloyeesData
-            // 
-            this.viewEmloyeesData.Caption = "View Employees Data";
-            this.viewEmloyeesData.Id = 8;
-            this.viewEmloyeesData.Name = "viewEmloyeesData";
-            this.viewEmloyeesData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.viewEmloyeesData_ItemClick);
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Clear Data";
-            this.barButtonItem2.Id = 9;
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // MainForm
             // 
@@ -251,6 +261,7 @@ namespace FuelStationApp {
         private DevExpress.XtraBars.BarButtonItem getEmployeesData;
         private DevExpress.XtraBars.BarButtonItem viewEmloyeesData;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem addCustomer;
     }
 }
 
