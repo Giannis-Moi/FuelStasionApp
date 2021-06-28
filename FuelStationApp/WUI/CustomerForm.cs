@@ -97,6 +97,25 @@ namespace FuelStationApp.WUI {
                 ResetFields();
             }
         }
+
+        private void btnEditCustomer_Click(object sender, EventArgs e) {
+            EditCustomer();
+        }
+
+        private void EditCustomer() {
+            try {
+                Connection.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Customers SET Name='" + ctrlName.Text + "',Surname='" + ctrlSurname.Text + "' WHERE CardNumber='" + ctrlCardNumber.Text + "'", Connection);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Customer Successfully Updated");
+                Connection.Close();
+                PopulateDataGridView();
+                ResetFields();
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
   
 }
