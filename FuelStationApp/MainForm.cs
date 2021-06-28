@@ -37,9 +37,12 @@ namespace FuelStationApp {
         }
 
         private void viewCustomersData_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+           
             gridControl1.DataSource = _MasterData.Tables[0];
             //gridControl1.DataMember = _MasterData.Tables[0].TableName;
             gridControl1.Refresh();
+            
+
         }
 
         private void getCustomersData_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
@@ -55,5 +58,45 @@ namespace FuelStationApp {
                 AppendLog("Exception", ex.Message);
             }
         }
+
+        private void getEmployeesData_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            try {
+                
+                SqlDataAdapter adapter = new SqlDataAdapter("select *  from Employees", _SqlConnection);
+                adapter.Fill(_MasterData);
+
+                // log
+                AppendLog("Data Set Filled", "OK");
+            }
+            catch (Exception ex) {
+                AppendLog("Exception", ex.Message);
+            }
+        }
+
+        private void viewEmloyeesData_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+           
+            gridControl1.DataSource = _MasterData.Tables[0];
+            gridControl1.Refresh();
+            gridView1.OptionsView.ShowGroupPanel = false;
+
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+
+            // gridControl1.DataSource = null;
+            // _MasterData.Tables[0].Clear();
+            //gridControl1.DataSource = _MasterData.Tables[0];
+
+            _MasterData.Tables[0].Clear();
+            gridView1.Columns.Clear();
+            gridControl1.DataSource = null;
+            gridControl1.Refresh();
+
+
+        }
+      
+
+
     }
+    
 }
