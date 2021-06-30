@@ -90,6 +90,24 @@
     <Compile Include="WUI\ItemForm.Designer.cs">
       <DependentUpon>ItemForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WUI\TransactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WUI\TransactionForm.Designer.cs">
+      <DependentUpon>TransactionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WUI\ViewTransactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WUI\ViewTransactionForm.Designer.cs">
+      <DependentUpon>ViewTransactionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WUI\ViewTransactionFormLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WUI\ViewTransactionFormLine.Designer.cs">
+      <DependentUpon>ViewTransactionFormLine.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="WUI\CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +128,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="WUI\ViewTransactionForm.resx">
+      <DependentUpon>ViewTransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WUI\ViewTransactionFormLine.resx">
+      <DependentUpon>ViewTransactionFormLine.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

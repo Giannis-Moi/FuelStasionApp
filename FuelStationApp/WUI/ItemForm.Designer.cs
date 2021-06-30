@@ -139,8 +139,13 @@ namespace FuelStationApp.WUI {
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Properties.DropDownRows = 3;
+            this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
+            "Fuel",
+            "Product",
+            "Service"});
             this.comboBoxEdit1.Size = new System.Drawing.Size(219, 20);
             this.comboBoxEdit1.TabIndex = 13;
+            this.comboBoxEdit1.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
             // 
             // ctrlPrice
             // 
@@ -192,6 +197,7 @@ namespace FuelStationApp.WUI {
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // gridItems
             // 

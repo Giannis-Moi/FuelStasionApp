@@ -16,7 +16,7 @@ namespace FuelStationApp.Impl {
         public decimal Price { get; set; }
         public decimal Cost { get; set; }
 
-        public Items() {
+        public Items(string code, string description) {
 
         }
         public Items(string code, string description, ItemsTypeEnum itemtype, decimal price, decimal cost) : base() {

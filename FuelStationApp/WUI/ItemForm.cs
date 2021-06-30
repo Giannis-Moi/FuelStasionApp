@@ -20,6 +20,7 @@ namespace FuelStationApp.WUI {
         }
 
         private void ItemForm_Load(object sender, EventArgs e) {
+          //  List<ItemsTypeEnum> enumList = Enum.GetValues(typeof(ItemsTypeEnum)).Cast<Pe>().ToList();
             foreach (ItemsTypeEnum type in Enum.GetValues(typeof(ItemsTypeEnum))) {
                 comboBoxEdit1.Properties.Items.Add(type);
             }
@@ -39,6 +40,7 @@ namespace FuelStationApp.WUI {
         public void InsertItem() {
             string code = Convert.ToString(ctrlCode.EditValue);
             string description = Convert.ToString(ctrlDescription.EditValue);
+            //.Category = (ItemsTypeEnum)Enum.Parse(typeof(ItemsTypeEnum), comboBoxEdit1.Text);
             string itemType = Convert.ToString(comboBoxEdit1.ToString());
             decimal price = Convert.ToDecimal(ctrlPrice.Text);
             decimal cost = Convert.ToDecimal(ctrlCost.Text);
@@ -92,7 +94,7 @@ namespace FuelStationApp.WUI {
 
 
             private void Deletebutton() {
-            DialogResult result = MessageBox.Show("Are you sure you want to delete this record?", "Warning", MessageBoxButtons.OKCancel);
+            DialogResult result = MessageBox.Show("Delete this record?", "Warning", MessageBoxButtons.OKCancel);
 
             if (result == DialogResult.OK) {
 
@@ -137,6 +139,14 @@ namespace FuelStationApp.WUI {
         private void btnView_Click(object sender, EventArgs e) {
             PopulateDataGridView();
             ResetFields();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
+        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e) {
+          
         }
     }
 }

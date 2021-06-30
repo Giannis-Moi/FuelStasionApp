@@ -41,6 +41,7 @@ namespace FuelStationApp.WUI {
             this.btnEditCustomer = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
+            this.btncancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlName.Properties)).BeginInit();
@@ -216,11 +217,24 @@ namespace FuelStationApp.WUI {
             this.btnView.UseVisualStyleBackColor = true;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
+            // btncancel
+            // 
+            this.btncancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btncancel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btncancel.Location = new System.Drawing.Point(870, 510);
+            this.btncancel.Name = "btncancel";
+            this.btncancel.Size = new System.Drawing.Size(78, 42);
+            this.btncancel.TabIndex = 12;
+            this.btncancel.Text = "Cancel";
+            this.btncancel.UseVisualStyleBackColor = true;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 576);
+            this.Controls.Add(this.btncancel);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.btndelete);
             this.Controls.Add(this.btnEditCustomer);
@@ -265,5 +279,6 @@ namespace FuelStationApp.WUI {
         private DevExpress.XtraGrid.Columns.GridColumn colCardNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private System.Windows.Forms.Button btnView;
+        private System.Windows.Forms.Button btncancel;
     }
 }
