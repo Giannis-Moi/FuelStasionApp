@@ -25,19 +25,17 @@ namespace FuelStationApp.WUI {
         /// </summary>
         private void InitializeComponent() {
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.gridItems = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.gridItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.gridTransactionLine = new DevExpress.XtraGrid.GridControl();
+            this.gridViewTransactionLine = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colItemID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colItemPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colValue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colItemCost = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colItemType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTransactionId = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTransactionLine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewTransactionLine)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -54,105 +52,90 @@ namespace FuelStationApp.WUI {
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Fuel Station Management System Application";
             // 
-            // gridItems
+            // gridTransactionLine
             // 
-            this.gridItems.Location = new System.Drawing.Point(12, 59);
-            this.gridItems.MainView = this.gridView1;
-            this.gridItems.Name = "gridItems";
-            this.gridItems.Size = new System.Drawing.Size(776, 352);
-            this.gridItems.TabIndex = 20;
-            this.gridItems.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridTransactionLine.Location = new System.Drawing.Point(12, 59);
+            this.gridTransactionLine.MainView = this.gridViewTransactionLine;
+            this.gridTransactionLine.Name = "gridTransactionLine";
+            this.gridTransactionLine.Size = new System.Drawing.Size(776, 352);
+            this.gridTransactionLine.TabIndex = 20;
+            this.gridTransactionLine.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewTransactionLine});
             // 
-            // gridView1
+            // gridViewTransactionLine
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8,
-            this.gridColumn9});
-            this.gridView1.GridControl = this.gridItems;
-            this.gridView1.Name = "gridView1";
+            this.gridViewTransactionLine.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colTransactionId,
+            this.colItemID,
+            this.colQuantity,
+            this.colItemPrice,
+            this.colValue,
+            this.colItemCost,
+            this.colItemType});
+            this.gridViewTransactionLine.GridControl = this.gridTransactionLine;
+            this.gridViewTransactionLine.Name = "gridViewTransactionLine";
             // 
-            // gridColumn1
+            // colItemID
             // 
-            this.gridColumn1.Caption = "gridColumn1";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.colItemID.FieldName = "ItemID";
+            this.colItemID.Name = "colItemID";
+            this.colItemID.Visible = true;
+            this.colItemID.VisibleIndex = 1;
             // 
-            // gridColumn2
+            // colQuantity
             // 
-            this.gridColumn2.Caption = "gridColumn2";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.colQuantity.FieldName = "Quantity";
+            this.colQuantity.Name = "colQuantity";
+            this.colQuantity.Visible = true;
+            this.colQuantity.VisibleIndex = 2;
             // 
-            // gridColumn3
+            // colItemPrice
             // 
-            this.gridColumn3.Caption = "gridColumn3";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.colItemPrice.FieldName = "ItemPrice";
+            this.colItemPrice.Name = "colItemPrice";
+            this.colItemPrice.Visible = true;
+            this.colItemPrice.VisibleIndex = 3;
             // 
-            // gridColumn4
+            // colValue
             // 
-            this.gridColumn4.Caption = "gridColumn4";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.colValue.FieldName = "Value";
+            this.colValue.Name = "colValue";
+            this.colValue.Visible = true;
+            this.colValue.VisibleIndex = 4;
             // 
-            // gridColumn5
+            // colItemCost
             // 
-            this.gridColumn5.Caption = "gridColumn5";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.colItemCost.FieldName = "ItemCost";
+            this.colItemCost.Name = "colItemCost";
+            this.colItemCost.Visible = true;
+            this.colItemCost.VisibleIndex = 5;
             // 
-            // gridColumn6
+            // colItemType
             // 
-            this.gridColumn6.Caption = "gridColumn6";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.colItemType.FieldName = "ItemType";
+            this.colItemType.Name = "colItemType";
+            this.colItemType.Visible = true;
+            this.colItemType.VisibleIndex = 6;
             // 
-            // gridColumn7
+            // colTransactionId
             // 
-            this.gridColumn7.Caption = "gridColumn7";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "gridColumn8";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "gridColumn9";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 8;
+            this.colTransactionId.FieldName = "TransactionId";
+            this.colTransactionId.Name = "colTransactionId";
+            this.colTransactionId.Visible = true;
+            this.colTransactionId.VisibleIndex = 0;
             // 
             // ViewTransactionFormLine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.gridItems);
+            this.Controls.Add(this.gridTransactionLine);
             this.Controls.Add(this.labelControl1);
             this.Name = "ViewTransactionFormLine";
             this.Text = "ViewTransactionFormLine";
-            ((System.ComponentModel.ISupportInitialize)(this.gridItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.Load += new System.EventHandler(this.ViewTransactionFormLine_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gridTransactionLine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewTransactionLine)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,16 +144,14 @@ namespace FuelStationApp.WUI {
         #endregion
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraGrid.GridControl gridItems;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.GridControl gridTransactionLine;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewTransactionLine;
+        private DevExpress.XtraGrid.Columns.GridColumn colItemID;
+        private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
+        private DevExpress.XtraGrid.Columns.GridColumn colItemPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn colValue;
+        private DevExpress.XtraGrid.Columns.GridColumn colItemCost;
+        private DevExpress.XtraGrid.Columns.GridColumn colItemType;
+        private DevExpress.XtraGrid.Columns.GridColumn colTransactionId;
     }
 }

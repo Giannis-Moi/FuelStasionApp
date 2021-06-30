@@ -42,8 +42,8 @@ namespace FuelStationApp.WUI {
             Id = Guid.Parse(Convert.ToString(gridViewTransaction.GetFocusedRowCellValue("ID")));
 
             ViewTransactionFormLine viewTransactionLine = new ViewTransactionFormLine();
-           // viewTransactionLine.Connection = Connection;
-           // viewTransactionLine.ID = Id;
+            viewTransactionLine.Connection = Connection;
+            viewTransactionLine.ID = Id;
             viewTransactionLine.ShowDialog();
         }
 
