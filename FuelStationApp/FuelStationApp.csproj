@@ -96,6 +96,12 @@
     <Compile Include="WUI\TransactionForm.Designer.cs">
       <DependentUpon>TransactionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WUI\TransactionStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WUI\TransactionStart.Designer.cs">
+      <DependentUpon>TransactionStart.cs</DependentUpon>
+    </Compile>
     <Compile Include="WUI\ViewTransactionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="WUI\TransactionForm.resx">
+      <DependentUpon>TransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WUI\TransactionStart.resx">
+      <DependentUpon>TransactionStart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WUI\ViewTransactionForm.resx">
       <DependentUpon>ViewTransactionForm.cs</DependentUpon>
     </EmbeddedResource>

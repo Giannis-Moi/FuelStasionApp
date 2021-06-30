@@ -38,6 +38,7 @@ namespace FuelStationApp {
             this.addCustomer = new DevExpress.XtraBars.BarButtonItem();
             this.btnInsertItem = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.btnViewTransaction = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -54,7 +55,8 @@ namespace FuelStationApp {
             this.txtLog = new System.Windows.Forms.TextBox();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.btnViewTransaction = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -79,9 +81,10 @@ namespace FuelStationApp {
             this.addCustomer,
             this.btnInsertItem,
             this.barSubItem1,
-            this.btnViewTransaction});
+            this.btnViewTransaction,
+            this.barButtonItem3});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 14;
+            this.ribbonControl1.MaxItemId = 15;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage3,
@@ -169,6 +172,13 @@ namespace FuelStationApp {
             this.barSubItem1.Id = 12;
             this.barSubItem1.Name = "barSubItem1";
             // 
+            // btnViewTransaction
+            // 
+            this.btnViewTransaction.Caption = "VIew transaction";
+            this.btnViewTransaction.Id = 13;
+            this.btnViewTransaction.Name = "btnViewTransaction";
+            this.btnViewTransaction.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViewTransaction_ItemClick);
+            // 
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -229,7 +239,8 @@ namespace FuelStationApp {
             // ribbonPage5
             // 
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup5});
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup7});
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "Transactions";
             // 
@@ -285,12 +296,18 @@ namespace FuelStationApp {
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // btnViewTransaction
+            // ribbonPageGroup7
             // 
-            this.btnViewTransaction.Caption = "VIew transaction";
-            this.btnViewTransaction.Id = 13;
-            this.btnViewTransaction.Name = "btnViewTransaction";
-            this.btnViewTransaction.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViewTransaction_ItemClick);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "ribbonPageGroup7";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "New Transaction";
+            this.barButtonItem3.Id = 14;
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // MainForm
             // 
@@ -343,6 +360,8 @@ namespace FuelStationApp {
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.BarButtonItem btnViewTransaction;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
     }
 }
 

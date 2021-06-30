@@ -122,6 +122,13 @@ namespace FuelStationApp {
             viewTransaction.Connection = _SqlConnection;
             viewTransaction.ShowDialog();
         }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            TransactionStart transactionStart = new TransactionStart();
+            _SqlConnection = new SqlConnection(ConnectionString);
+            transactionStart.Connection = _SqlConnection;
+            transactionStart.ShowDialog();
+        }
     }
     
 }
