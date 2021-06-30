@@ -8,6 +8,7 @@ using static FuelStationApp.Impl.Enums;
 
 namespace FuelStationApp.Impl {
    public class Items: Entity {
+        private string itemType;
 
         public string Code { get; set; }
         public string Description { get; set; }
@@ -18,7 +19,7 @@ namespace FuelStationApp.Impl {
         public Items() {
 
         }
-        public Items(string code, string description, ItemsTypeEnum itemtype, decimal price, decimal cost) {
+        public Items(string code, string description, ItemsTypeEnum itemtype, decimal price, decimal cost) : base() {
 
             Code = code;
             Description = description;
@@ -26,6 +27,14 @@ namespace FuelStationApp.Impl {
             Price = price;
             Cost = cost;
 
+        }
+
+        public Items(string code, string description, string itemType, decimal price, decimal cost) {
+            Code = code;
+            Description = description;
+            this.itemType = itemType;
+            Price = price;
+            Cost = cost;
         }
     }
 }

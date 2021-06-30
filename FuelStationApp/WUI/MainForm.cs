@@ -108,6 +108,13 @@ namespace FuelStationApp {
             customerForm.ShowDialog();
 
         }
+
+        private void btnInsertItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            ItemForm itemForm = new ItemForm();
+            _SqlConnection = new SqlConnection(ConnectionString);
+            itemForm.Connection = _SqlConnection;
+            itemForm.ShowDialog();
+        }
     }
     
 }
