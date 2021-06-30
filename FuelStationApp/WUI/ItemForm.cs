@@ -58,10 +58,6 @@ namespace FuelStationApp.WUI {
                 MessageBox.Show("Items Succesfully Added");
                 Connection.Close();
                 PopulateDataGridView();
-
-
-
-
             }
             else {
 

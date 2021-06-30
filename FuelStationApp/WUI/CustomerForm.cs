@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FuelStationApp.Impl;
+using FuelStationApp.Properties;
 
 namespace FuelStationApp.WUI {
     public partial class CustomerForm : Form {
@@ -34,32 +35,9 @@ namespace FuelStationApp.WUI {
             }
         }
 
-        public void addCustomer() {
-
-            string customerName = Convert.ToString(ctrlName.Text);
-            string customerSurname = Convert.ToString(ctrlSurname.Text);
-            string customerCardNumber = Convert.ToString(ctrlCardNumber.Text);
-
-
-            Customer newCustomer = new Customer(customerName, customerSurname, customerCardNumber);
-
-            try {
-                Connection.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Customers (ID, Name, Surname, CardNumber) VALUES (NEWID(), '" + newCustomer.Name + "', '" + newCustomer.Surname + "', '" + newCustomer.CardNumber + "')", Connection);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Employee Succesfully Added");
-                Connection.Close();
-                PopulateDataGridView();
-            }
-            catch (Exception ex) {
-
-                MessageBox.Show(ex.Message);
-            }
-         
-        }
-
+   
         private void btnAdd_Click(object sender, EventArgs e) {
-            addCustomer();
+            AddCustomer();
             PopulateDataGridView();
 
         }
@@ -69,8 +47,29 @@ namespace FuelStationApp.WUI {
         }
 
         private void CustomerForm_Load(object sender, EventArgs e) {
-            PopulateDataGridView();
-            ResetFields();
+            //PopulateDataGridView();
+           // ResetFields();
+        }
+
+        public void AddCustomer() {
+            string customerName = Convert.ToString(ctrlName.EditValue);
+            string customerSurname = Convert.ToString(ctrlSurname.EditValue);
+            string customerCardNumber = Convert.ToString(ctrlCardNumber.EditValue);
+
+
+            Customer newCustomer = new Customer(customerName, customerSurname, customerCardNumber);
+
+          
+
+
+                SqlCommand cmd = new SqlCommand("INSERT INTO Customers (ID, Name, Surname, CardNumber) VALUES (NEWID(), '" + newCustomer.Name + "', '" + newCustomer.Surname + "', '" + newCustomer.CardNumber +  "')", Connection);
+                Connection.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Items Succesfully Added");
+                Connection.Close();
+                PopulateDataGridView();
+          
+            
         }
 
         private void ResetFields() {
@@ -83,15 +82,14 @@ namespace FuelStationApp.WUI {
             DeleteCustomer();
         }
         private void DeleteCustomer() {
-            if (ctrlName.Text == String.Empty && ctrlSurname.Text == String.Empty && ctrlCardNumber.Text == String.Empty) {
-                MessageBox.Show("Enter the Customer's data to delete the Record");
-            }
-            else {
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this customer?", "Warning", MessageBoxButtons.OKCancel);
+
+            if (result == DialogResult.OK) {
+
+                SqlCommand cmd = new SqlCommand(string.Format(Resources.DeleteCustomer, Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ID"))), Connection);
                 Connection.Open();
-                string myquery = "DELETE FROM Customers WHERE CardNumber='" + ctrlCardNumber.Text + "'";
-                SqlCommand cmd = new SqlCommand(myquery, Connection);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Customer Successfully Deleted");
+                MessageBox.Show("Customer Record Succesfully Deleted!");
                 Connection.Close();
                 PopulateDataGridView();
                 ResetFields();
@@ -115,6 +113,11 @@ namespace FuelStationApp.WUI {
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnView_Click(object sender, EventArgs e) {
+            PopulateDataGridView();
+            ResetFields();
         }
     }
   

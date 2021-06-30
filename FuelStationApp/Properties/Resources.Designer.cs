@@ -61,6 +61,27 @@ namespace FuelStationApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Linq;
+        ///using System.Text;
+        ///using System.Threading.Tasks;
+        ///
+        ///namespace FuelStationApp.Queries
+        ///{
+        ///    class DeleteCustomer
+        ///    {
+        ///    }
+        ///}
+        ///.
+        /// </summary>
+        internal static string DeleteCustomer {
+            get {
+                return ResourceManager.GetString("DeleteCustomer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DELETE FROM [Items] WHERE ID=&apos;{0}&apos;.
         /// </summary>
         internal static string DeleteItem {
@@ -70,8 +91,8 @@ namespace FuelStationApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to UPDATE [dbo].Item
-        ///SET [Code] = &apos;{0}&apos;, [Description]= &apos;{1}&apos;, [ItemType]= &apos;{2}&apos;, [Price]= &apos;{3}&apos;,[Cost]= &apos;{4}&apos;
+        ///   Looks up a localized string similar to UPDATE [dbo].Items
+        ///SET  [Code] = &apos;{0}&apos;, [Description]= &apos;{1}&apos;, [ItemType]= &apos;{2}&apos;, [Price]= &apos;{3}&apos;,[Cost]= &apos;{4}&apos;
         ///WHERE ID = &apos;{5}&apos;;
         ///.
         /// </summary>

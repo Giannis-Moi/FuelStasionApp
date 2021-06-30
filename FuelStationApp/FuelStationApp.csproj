@@ -124,6 +124,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Queries\DeleteCustomer.sql" />
     <Content Include="Queries\DeleteItem.sql" />
     <Content Include="Queries\InsertItem.sql" />
     <Content Include="Queries\UpdateItem.sql" />

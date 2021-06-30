@@ -40,6 +40,7 @@ namespace FuelStationApp.WUI {
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEditCustomer = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlName.Properties)).BeginInit();
@@ -171,9 +172,9 @@ namespace FuelStationApp.WUI {
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnAdd.Location = new System.Drawing.Point(691, 266);
+            this.btnAdd.Location = new System.Drawing.Point(730, 257);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(95, 42);
+            this.btnAdd.Size = new System.Drawing.Size(74, 42);
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Insert Record";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -183,7 +184,7 @@ namespace FuelStationApp.WUI {
             // 
             this.btnEditCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnEditCustomer.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnEditCustomer.Location = new System.Drawing.Point(802, 266);
+            this.btnEditCustomer.Location = new System.Drawing.Point(810, 268);
             this.btnEditCustomer.Name = "btnEditCustomer";
             this.btnEditCustomer.Size = new System.Drawing.Size(75, 23);
             this.btnEditCustomer.TabIndex = 9;
@@ -195,7 +196,7 @@ namespace FuelStationApp.WUI {
             // 
             this.btndelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btndelete.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btndelete.Location = new System.Drawing.Point(894, 266);
+            this.btndelete.Location = new System.Drawing.Point(903, 268);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(75, 23);
             this.btndelete.TabIndex = 10;
@@ -203,11 +204,24 @@ namespace FuelStationApp.WUI {
             this.btndelete.UseVisualStyleBackColor = true;
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
+            // btnView
+            // 
+            this.btnView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btnView.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnView.Location = new System.Drawing.Point(646, 257);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(78, 42);
+            this.btnView.TabIndex = 11;
+            this.btnView.Text = "View Record";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 576);
+            this.Controls.Add(this.btnView);
             this.Controls.Add(this.btndelete);
             this.Controls.Add(this.btnEditCustomer);
             this.Controls.Add(this.btnAdd);
@@ -250,5 +264,6 @@ namespace FuelStationApp.WUI {
         private System.Windows.Forms.Button btndelete;
         private DevExpress.XtraGrid.Columns.GridColumn colCardNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private System.Windows.Forms.Button btnView;
     }
 }
