@@ -27,13 +27,13 @@ namespace FuelStationApp.WUI {
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridTransactionLine = new DevExpress.XtraGrid.GridControl();
             this.gridViewTransactionLine = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colTransactionId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colItemID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colItemPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colItemCost = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCost = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colItemType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTransactionId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridTransactionLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewTransactionLine)).BeginInit();
             this.SuspendLayout();
@@ -70,10 +70,17 @@ namespace FuelStationApp.WUI {
             this.colQuantity,
             this.colItemPrice,
             this.colValue,
-            this.colItemCost,
+            this.colCost,
             this.colItemType});
             this.gridViewTransactionLine.GridControl = this.gridTransactionLine;
             this.gridViewTransactionLine.Name = "gridViewTransactionLine";
+            // 
+            // colTransactionId
+            // 
+            this.colTransactionId.FieldName = "TransactionId";
+            this.colTransactionId.Name = "colTransactionId";
+            this.colTransactionId.Visible = true;
+            this.colTransactionId.VisibleIndex = 0;
             // 
             // colItemID
             // 
@@ -103,12 +110,12 @@ namespace FuelStationApp.WUI {
             this.colValue.Visible = true;
             this.colValue.VisibleIndex = 4;
             // 
-            // colItemCost
+            // colCost
             // 
-            this.colItemCost.FieldName = "ItemCost";
-            this.colItemCost.Name = "colItemCost";
-            this.colItemCost.Visible = true;
-            this.colItemCost.VisibleIndex = 5;
+            this.colCost.FieldName = "Cost";
+            this.colCost.Name = "colCost";
+            this.colCost.Visible = true;
+            this.colCost.VisibleIndex = 5;
             // 
             // colItemType
             // 
@@ -116,13 +123,6 @@ namespace FuelStationApp.WUI {
             this.colItemType.Name = "colItemType";
             this.colItemType.Visible = true;
             this.colItemType.VisibleIndex = 6;
-            // 
-            // colTransactionId
-            // 
-            this.colTransactionId.FieldName = "TransactionId";
-            this.colTransactionId.Name = "colTransactionId";
-            this.colTransactionId.Visible = true;
-            this.colTransactionId.VisibleIndex = 0;
             // 
             // ViewTransactionFormLine
             // 
@@ -150,8 +150,8 @@ namespace FuelStationApp.WUI {
         private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn colItemPrice;
         private DevExpress.XtraGrid.Columns.GridColumn colValue;
-        private DevExpress.XtraGrid.Columns.GridColumn colItemCost;
-        private DevExpress.XtraGrid.Columns.GridColumn colItemType;
         private DevExpress.XtraGrid.Columns.GridColumn colTransactionId;
+        private DevExpress.XtraGrid.Columns.GridColumn colCost;
+        private DevExpress.XtraGrid.Columns.GridColumn colItemType;
     }
 }
