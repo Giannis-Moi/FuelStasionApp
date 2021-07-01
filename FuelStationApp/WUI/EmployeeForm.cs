@@ -61,5 +61,14 @@ namespace FuelStationApp.WUI {
             PopulateDataGridView();
             //ResetFields();
         }
+
+        private void btnInsert_Click(object sender, EventArgs e) {
+            AddEmployee();
+            PopulateDataGridView();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e) {
+            this.Close();
+        }
     }
 }

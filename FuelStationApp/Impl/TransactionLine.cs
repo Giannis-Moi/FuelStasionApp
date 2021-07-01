@@ -10,22 +10,27 @@ namespace FuelStationApp.Impl {
 
         public Guid TransactionID { get; set; }
         public Guid ItemID { get; set; }
-
         public int Quantity { get; set; }
         public decimal ItemPrice { get; set; }
         public decimal Value { get; set; }
+        public decimal Cost { get; set; }
+        public string ItemType { get; set; }
+        public decimal ItemCost { get; set; }
 
         public TransactionLine() {
 
         }
 
-        public TransactionLine(Guid transactionID, Guid itemID, int quantity, decimal itemPrice, decimal value) : base() {
+        public TransactionLine( Guid itemID, int quantity, decimal itemPrice, decimal value, decimal itemCost, decimal cost, string itemType) : base() {
 
-            TransactionID = transactionID;
+            
             ItemID = itemID;
             Quantity = quantity;
             ItemPrice = itemPrice;
             Value = value;
+            Cost = cost;
+            ItemType = itemType;
+            ItemCost = itemCost;
 
         }
     }

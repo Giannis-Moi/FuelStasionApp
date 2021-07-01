@@ -34,7 +34,9 @@ namespace FuelStationApp.WUI {
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSurname = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCardNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDateStart = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDateEnd = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSalary = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.ctrlName = new DevExpress.XtraEditors.TextEdit();
             this.ctrlSurname = new DevExpress.XtraEditors.TextEdit();
@@ -42,10 +44,10 @@ namespace FuelStationApp.WUI {
             this.ctrlDateStart = new DevExpress.XtraEditors.TextEdit();
             this.ctrlDateEnd = new DevExpress.XtraEditors.TextEdit();
             this.btnView = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btndelete = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlName.Properties)).BeginInit();
@@ -131,7 +133,9 @@ namespace FuelStationApp.WUI {
             this.colID,
             this.colName,
             this.colSurname,
-            this.colCardNumber});
+            this.colDateStart,
+            this.colDateEnd,
+            this.colSalary});
             this.gridView1.GridControl = this.gridCustomers;
             this.gridView1.Name = "gridView1";
             // 
@@ -156,12 +160,26 @@ namespace FuelStationApp.WUI {
             this.colSurname.Visible = true;
             this.colSurname.VisibleIndex = 2;
             // 
-            // colCardNumber
+            // colDateStart
             // 
-            this.colCardNumber.FieldName = "CardNumber";
-            this.colCardNumber.Name = "colCardNumber";
-            this.colCardNumber.Visible = true;
-            this.colCardNumber.VisibleIndex = 3;
+            this.colDateStart.FieldName = "DateStart";
+            this.colDateStart.Name = "colDateStart";
+            this.colDateStart.Visible = true;
+            this.colDateStart.VisibleIndex = 3;
+            // 
+            // colDateEnd
+            // 
+            this.colDateEnd.FieldName = "DateEnd";
+            this.colDateEnd.Name = "colDateEnd";
+            this.colDateEnd.Visible = true;
+            this.colDateEnd.VisibleIndex = 4;
+            // 
+            // colSalary
+            // 
+            this.colSalary.FieldName = "Salary";
+            this.colSalary.Name = "colSalary";
+            this.colSalary.Visible = true;
+            this.colSalary.VisibleIndex = 5;
             // 
             // labelControl1
             // 
@@ -224,59 +242,61 @@ namespace FuelStationApp.WUI {
             this.btnView.UseVisualStyleBackColor = true;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
-            // button1
+            // btnInsert
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(723, 346);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 42);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "View Record";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btnInsert.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnInsert.Location = new System.Drawing.Point(723, 346);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(78, 42);
+            this.btnInsert.TabIndex = 16;
+            this.btnInsert.Text = "Insert Record";
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
-            // button2
+            // btnEdit
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Location = new System.Drawing.Point(825, 346);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 42);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "View Record";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btnEdit.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnEdit.Location = new System.Drawing.Point(825, 346);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(78, 42);
+            this.btnEdit.TabIndex = 17;
+            this.btnEdit.Text = "Edit Record";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btndelete
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.Location = new System.Drawing.Point(918, 346);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(78, 42);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "View Record";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btndelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btndelete.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btndelete.Location = new System.Drawing.Point(918, 346);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(78, 42);
+            this.btndelete.TabIndex = 18;
+            this.btndelete.Text = "Delete  Record";
+            this.btndelete.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnCancel
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button4.Location = new System.Drawing.Point(899, 466);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(78, 42);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "View Record";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCancel.Location = new System.Drawing.Point(899, 466);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(78, 42);
+            this.btnCancel.TabIndex = 19;
+            this.btnCancel.Text = "Ok";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 542);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btndelete);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.ctrlDateEnd);
             this.Controls.Add(this.ctrlDateStart);
@@ -316,7 +336,6 @@ namespace FuelStationApp.WUI {
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colSurname;
-        private DevExpress.XtraGrid.Columns.GridColumn colCardNumber;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit ctrlName;
         private DevExpress.XtraEditors.TextEdit ctrlSurname;
@@ -324,9 +343,12 @@ namespace FuelStationApp.WUI {
         private DevExpress.XtraEditors.TextEdit ctrlDateStart;
         private DevExpress.XtraEditors.TextEdit ctrlDateEnd;
         private System.Windows.Forms.Button btnView;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btndelete;
+        private System.Windows.Forms.Button btnCancel;
+        private DevExpress.XtraGrid.Columns.GridColumn colDateStart;
+        private DevExpress.XtraGrid.Columns.GridColumn colDateEnd;
+        private DevExpress.XtraGrid.Columns.GridColumn colSalary;
     }
 }
