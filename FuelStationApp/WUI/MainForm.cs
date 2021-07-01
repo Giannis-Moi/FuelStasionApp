@@ -109,6 +109,14 @@ namespace FuelStationApp {
 
         }
 
+        private void AddEmployee() {
+            EmployeeForm employeeForm = new EmployeeForm();
+            _SqlConnection = new SqlConnection(ConnectionString);
+            employeeForm.Connection = _SqlConnection;
+            employeeForm.ShowDialog();
+
+        }
+
         private void btnInsertItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
             ItemForm itemForm = new ItemForm();
             _SqlConnection = new SqlConnection(ConnectionString);
@@ -128,6 +136,10 @@ namespace FuelStationApp {
             _SqlConnection = new SqlConnection(ConnectionString);
             transactionStart.Connection = _SqlConnection;
             transactionStart.ShowDialog();
+        }
+
+        private void addEmployee_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            AddEmployee();
         }
     }
     

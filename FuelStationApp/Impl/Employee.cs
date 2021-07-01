@@ -15,11 +15,12 @@ namespace FuelStationApp.Impl {
         public Employee():base() {
 
         }
-        public Employee(decimal salary, DateTime dateStart, DateTime dateEnd):base() {
+        public Employee(string name, string surname, decimal salary):base() {
 
-  
-            DateStart = dateStart;
-            DateEnd = dateEnd;
+            Name = name;
+            Surname = surname;
+            //DateStart = dateStart;
+           // DateEnd = dateEnd;
             Salary = salary;
         }
     }

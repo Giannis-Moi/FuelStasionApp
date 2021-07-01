@@ -59,16 +59,20 @@ namespace FuelStationApp.WUI {
 
             Customer newCustomer = new Customer(customerName, customerSurname, customerCardNumber);
 
-          
+            if (!string.IsNullOrWhiteSpace(customerName) && !string.IsNullOrWhiteSpace(customerSurname) && !string.IsNullOrWhiteSpace(customerCardNumber)){
 
-
-                SqlCommand cmd = new SqlCommand("INSERT INTO Customers (ID, Name, Surname, CardNumber) VALUES (NEWID(), '" + newCustomer.Name + "', '" + newCustomer.Surname + "', '" + newCustomer.CardNumber +  "')", Connection);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Customers (ID, Name, Surname, CardNumber) VALUES (NEWID(), '" + newCustomer.Name + "', '" + newCustomer.Surname + "', '" + newCustomer.CardNumber + "')", Connection);
                 Connection.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Items Succesfully Added");
                 Connection.Close();
                 PopulateDataGridView();
-          
+            }
+            else {
+
+                MessageBox.Show("Please fill all fields with valid values!");
+
+            }
             
         }
 

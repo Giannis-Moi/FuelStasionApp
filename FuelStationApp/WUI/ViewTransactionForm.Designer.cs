@@ -142,9 +142,9 @@ namespace FuelStationApp.WUI {
             this.labelControlName.Appearance.Options.UseForeColor = true;
             this.labelControlName.Location = new System.Drawing.Point(605, 81);
             this.labelControlName.Name = "labelControlName";
-            this.labelControlName.Size = new System.Drawing.Size(89, 16);
+            this.labelControlName.Size = new System.Drawing.Size(54, 16);
             this.labelControlName.TabIndex = 20;
-            this.labelControlName.Text = "Card Number:";
+            this.labelControlName.Text = "Card ID:";
             // 
             // ctrlName
             // 
