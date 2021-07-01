@@ -165,6 +165,7 @@
   <ItemGroup>
     <Content Include="Queries\DeleteCustomer.sql" />
     <Content Include="Queries\DeleteItem.sql" />
+    <Content Include="Queries\DeleteEmployee.sql" />
     <Content Include="Queries\InsertItem.sql" />
     <Content Include="Queries\UpdateItem.sql" />
   </ItemGroup>

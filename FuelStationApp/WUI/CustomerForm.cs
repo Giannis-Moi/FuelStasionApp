@@ -14,6 +14,9 @@ using FuelStationApp.Properties;
 namespace FuelStationApp.WUI {
     public partial class CustomerForm : Form {
         public SqlConnection Connection { get; set; }
+
+        private DataSet _MasterData = new DataSet();
+        private DataSet _MasterDataOld = new DataSet();
         public CustomerForm() {
             InitializeComponent();
         }
@@ -101,7 +104,9 @@ namespace FuelStationApp.WUI {
         }
 
         private void btnEditCustomer_Click(object sender, EventArgs e) {
-            EditCustomer();
+            
+
+            UpdateEntry("ID");
         }
 
         private void EditCustomer() {
@@ -127,6 +132,97 @@ namespace FuelStationApp.WUI {
         private void btncancel_Click(object sender, EventArgs e) {
             this.Close();
         }
+
+        private void UpdateEntry(string primaryKey) {
+
+            List<string> sqlCommands = new List<string>();
+
+            //var c = _MasterData.Tables[0].GetChanges();
+
+            bool hasChanges = _MasterData.HasChanges();
+            if (!hasChanges) {
+                return;
+            }
+
+            foreach (DataRow row in _MasterData.Tables[0].Rows) {
+
+                string sql = string.Empty;
+                string sqlSet = string.Empty;
+
+                List<string> sqlSetLines = new List<string>();
+                List<string> sqlWhereLines = new List<string>();
+
+                DataRow rowOld = _MasterDataOld.Tables[0].Select("ID = " + row[primaryKey])[0];
+
+
+                //if (row.RowState == DataRowState.Modified) { 
+
+                //}
+
+                foreach (DataColumn column in _MasterData.Tables[0].Columns) {
+
+                    if (column.ColumnName == primaryKey) {
+                        ComposeQueryField(sqlWhereLines, column.ColumnName, row[column]);
+                    }
+                    else {
+
+                        if (row[column.ColumnName].ToString() != rowOld[column.ColumnName].ToString()) {
+
+                            ComposeQueryField(sqlSetLines, column.ColumnName, row[column]);
+                        }
+                    }
+                }
+
+                sqlSet = string.Join(",", sqlSetLines);
+
+                if (sqlSetLines.Count > 0) {
+                    sql = "UPDATE " + _MasterData.Tables[0].TableName + " SET " + sqlSet + " WHERE " + string.Join(",", sqlWhereLines);
+                    sqlCommands.Add(sql);
+
+                }
+
+              
+            }
+
+        }
+
+        private void ComposeQueryField(List<string> sqlLine, string columnName, object value) {
+
+            switch (value.GetType().Name) {
+                case "Guid":
+                case "String":
+                    sqlLine.Add(string.Format("{0}='{1}'", columnName, value));
+                    break;
+               
+                   
+
+                case "Int32":
+                case "Int64":
+                    sqlLine.Add(string.Format("{0}={1}", columnName, value));
+                    break;
+
+                case "DateTime":
+                    string datePart = Convert.ToDateTime(value).ToString("yyyyMMdd");
+                    sqlLine.Add(string.Format("{0}='{1}'", columnName, datePart));
+                    break;
+
+                case "Decimal":
+
+                    // decimal provider , .
+
+                    string decimalPart = Convert.ToDecimal(value).ToString().Replace(',', '.');
+
+                    sqlLine.Add(string.Format("{0}={1}", columnName, decimalPart));
+                    break;
+            }
+
+
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e) {
+           
+        }
     }
-  
+
 }

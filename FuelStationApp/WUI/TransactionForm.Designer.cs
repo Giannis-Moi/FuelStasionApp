@@ -34,7 +34,6 @@ namespace FuelStationApp.WUI {
             this.colCost = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridTransactionLines = new DevExpress.XtraGrid.GridControl();
             this.gridViewTransactionLine = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colTransactionId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colItemID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colItemPrice = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -45,8 +44,6 @@ namespace FuelStationApp.WUI {
             this.ctrlCustomerID = new DevExpress.XtraEditors.TextEdit();
             this.labelcontrolCustomer = new DevExpress.XtraEditors.LabelControl();
             this.btnAddItem = new DevExpress.XtraEditors.SimpleButton();
-            this.ctrlItemType = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.ctrlDiscountValue = new DevExpress.XtraEditors.TextEdit();
             this.ctrlTotalValue = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -59,7 +56,6 @@ namespace FuelStationApp.WUI {
             ((System.ComponentModel.ISupportInitialize)(this.gridTransactionLines)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewTransactionLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlCustomerID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ctrlItemType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlDiscountValue.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlTotalValue.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlTotalCost.Properties)).BeginInit();
@@ -133,10 +129,10 @@ namespace FuelStationApp.WUI {
             // 
             // gridTransactionLines
             // 
-            this.gridTransactionLines.Location = new System.Drawing.Point(788, 99);
+            this.gridTransactionLines.Location = new System.Drawing.Point(703, 99);
             this.gridTransactionLines.MainView = this.gridViewTransactionLine;
             this.gridTransactionLines.Name = "gridTransactionLines";
-            this.gridTransactionLines.Size = new System.Drawing.Size(477, 364);
+            this.gridTransactionLines.Size = new System.Drawing.Size(562, 364);
             this.gridTransactionLines.TabIndex = 21;
             this.gridTransactionLines.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewTransactionLine});
@@ -144,7 +140,6 @@ namespace FuelStationApp.WUI {
             // gridViewTransactionLine
             // 
             this.gridViewTransactionLine.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colTransactionId,
             this.colItemID,
             this.colQuantity,
             this.colItemPrice,
@@ -154,54 +149,47 @@ namespace FuelStationApp.WUI {
             this.gridViewTransactionLine.GridControl = this.gridTransactionLines;
             this.gridViewTransactionLine.Name = "gridViewTransactionLine";
             // 
-            // colTransactionId
-            // 
-            this.colTransactionId.FieldName = "TransactionId";
-            this.colTransactionId.Name = "colTransactionId";
-            this.colTransactionId.Visible = true;
-            this.colTransactionId.VisibleIndex = 0;
-            // 
             // colItemID
             // 
             this.colItemID.FieldName = "ItemID";
             this.colItemID.Name = "colItemID";
             this.colItemID.Visible = true;
-            this.colItemID.VisibleIndex = 1;
+            this.colItemID.VisibleIndex = 3;
             // 
             // colQuantity
             // 
             this.colQuantity.FieldName = "Quantity";
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.Visible = true;
-            this.colQuantity.VisibleIndex = 2;
+            this.colQuantity.VisibleIndex = 0;
             // 
             // colItemPrice
             // 
             this.colItemPrice.FieldName = "ItemPrice";
             this.colItemPrice.Name = "colItemPrice";
             this.colItemPrice.Visible = true;
-            this.colItemPrice.VisibleIndex = 3;
+            this.colItemPrice.VisibleIndex = 1;
             // 
             // colValue
             // 
             this.colValue.FieldName = "Value";
             this.colValue.Name = "colValue";
             this.colValue.Visible = true;
-            this.colValue.VisibleIndex = 4;
+            this.colValue.VisibleIndex = 2;
             // 
             // gridColumn1
             // 
             this.gridColumn1.FieldName = "Cost";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 5;
+            this.gridColumn1.VisibleIndex = 4;
             // 
             // colItemType
             // 
             this.colItemType.FieldName = "ItemType";
             this.colItemType.Name = "colItemType";
             this.colItemType.Visible = true;
-            this.colItemType.VisibleIndex = 6;
+            this.colItemType.VisibleIndex = 5;
             // 
             // labelControl1
             // 
@@ -266,41 +254,6 @@ namespace FuelStationApp.WUI {
             this.btnAddItem.TabIndex = 94;
             this.btnAddItem.Text = "Add Item";
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
-            // 
-            // ctrlItemType
-            // 
-            this.ctrlItemType.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctrlItemType.Location = new System.Drawing.Point(506, 258);
-            this.ctrlItemType.Margin = new System.Windows.Forms.Padding(4);
-            this.ctrlItemType.Name = "ctrlItemType";
-            this.ctrlItemType.Properties.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.ctrlItemType.Properties.Appearance.Options.UseFont = true;
-            this.ctrlItemType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ctrlItemType.Properties.Items.AddRange(new object[] {
-            "Fuel",
-            "Products",
-            "Services"});
-            this.ctrlItemType.Size = new System.Drawing.Size(158, 28);
-            this.ctrlItemType.TabIndex = 95;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRefresh.Appearance.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnRefresh.Appearance.BackColor2 = System.Drawing.Color.White;
-            this.btnRefresh.Appearance.BorderColor = System.Drawing.Color.SkyBlue;
-            this.btnRefresh.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Appearance.Options.UseBackColor = true;
-            this.btnRefresh.Appearance.Options.UseBorderColor = true;
-            this.btnRefresh.Appearance.Options.UseFont = true;
-            this.btnRefresh.Appearance.Options.UseForeColor = true;
-            this.btnRefresh.Location = new System.Drawing.Point(671, 258);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(111, 28);
-            this.btnRefresh.TabIndex = 96;
-            this.btnRefresh.Text = "Refresh";
             // 
             // ctrlDiscountValue
             // 
@@ -418,8 +371,6 @@ namespace FuelStationApp.WUI {
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.ctrlTotalValue);
             this.Controls.Add(this.ctrlDiscountValue);
-            this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.ctrlItemType);
             this.Controls.Add(this.btnAddItem);
             this.Controls.Add(this.labelcontrolCustomer);
             this.Controls.Add(this.ctrlCustomerID);
@@ -434,7 +385,6 @@ namespace FuelStationApp.WUI {
             ((System.ComponentModel.ISupportInitialize)(this.gridTransactionLines)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewTransactionLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlCustomerID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ctrlItemType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlDiscountValue.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlTotalValue.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlTotalCost.Properties)).EndInit();
@@ -454,7 +404,6 @@ namespace FuelStationApp.WUI {
         private DevExpress.XtraGrid.Columns.GridColumn colCost;
         private DevExpress.XtraGrid.GridControl gridTransactionLines;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewTransactionLine;
-        private DevExpress.XtraGrid.Columns.GridColumn colTransactionId;
         private DevExpress.XtraGrid.Columns.GridColumn colItemID;
         private DevExpress.XtraGrid.Columns.GridColumn colQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn colItemPrice;
@@ -465,8 +414,6 @@ namespace FuelStationApp.WUI {
         private DevExpress.XtraEditors.TextEdit ctrlCustomerID;
         private DevExpress.XtraEditors.LabelControl labelcontrolCustomer;
         private DevExpress.XtraEditors.SimpleButton btnAddItem;
-        private DevExpress.XtraEditors.ComboBoxEdit ctrlItemType;
-        private DevExpress.XtraEditors.SimpleButton btnRefresh;
         private DevExpress.XtraEditors.TextEdit ctrlDiscountValue;
         private DevExpress.XtraEditors.TextEdit ctrlTotalValue;
         private DevExpress.XtraEditors.LabelControl labelControl2;

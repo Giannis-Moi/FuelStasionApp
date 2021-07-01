@@ -124,8 +124,6 @@ namespace FuelStationApp.WUI {
             // 
             this.colTotalCost.FieldName = "TotalCost";
             this.colTotalCost.Name = "colTotalCost";
-            this.colTotalCost.Visible = true;
-            this.colTotalCost.VisibleIndex = 5;
             // 
             // ColDiscountValue
             // 
@@ -148,16 +146,16 @@ namespace FuelStationApp.WUI {
             // 
             // ctrlName
             // 
-            this.ctrlName.Location = new System.Drawing.Point(704, 80);
+            this.ctrlName.Location = new System.Drawing.Point(673, 80);
             this.ctrlName.Name = "ctrlName";
-            this.ctrlName.Size = new System.Drawing.Size(152, 20);
+            this.ctrlName.Size = new System.Drawing.Size(216, 20);
             this.ctrlName.TabIndex = 21;
             // 
             // btnViewTransactionLine
             // 
             this.btnViewTransactionLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnViewTransactionLine.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnViewTransactionLine.Location = new System.Drawing.Point(673, 130);
+            this.btnViewTransactionLine.Location = new System.Drawing.Point(703, 128);
             this.btnViewTransactionLine.Name = "btnViewTransactionLine";
             this.btnViewTransactionLine.Size = new System.Drawing.Size(148, 42);
             this.btnViewTransactionLine.TabIndex = 22;

@@ -40,6 +40,7 @@ namespace FuelStationApp {
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.btnViewTransaction = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.addEmployee = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -57,7 +58,6 @@ namespace FuelStationApp {
             this.txtLog = new System.Windows.Forms.TextBox();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.addEmployee = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -158,6 +158,8 @@ namespace FuelStationApp {
             // 
             this.addCustomer.Caption = "Customers Management System";
             this.addCustomer.Id = 10;
+            this.addCustomer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("addCustomer.ImageOptions.Image")));
+            this.addCustomer.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("addCustomer.ImageOptions.LargeImage")));
             this.addCustomer.Name = "addCustomer";
             this.addCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addCustomer_ItemClick);
             // 
@@ -165,6 +167,8 @@ namespace FuelStationApp {
             // 
             this.btnInsertItem.Caption = " Items management system";
             this.btnInsertItem.Id = 11;
+            this.btnInsertItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInsertItem.ImageOptions.Image")));
+            this.btnInsertItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnInsertItem.ImageOptions.LargeImage")));
             this.btnInsertItem.Name = "btnInsertItem";
             this.btnInsertItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInsertItem_ItemClick);
             // 
@@ -178,6 +182,8 @@ namespace FuelStationApp {
             // 
             this.btnViewTransaction.Caption = "VIew transaction";
             this.btnViewTransaction.Id = 13;
+            this.btnViewTransaction.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnViewTransaction.ImageOptions.Image")));
+            this.btnViewTransaction.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnViewTransaction.ImageOptions.LargeImage")));
             this.btnViewTransaction.Name = "btnViewTransaction";
             this.btnViewTransaction.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViewTransaction_ItemClick);
             // 
@@ -185,8 +191,19 @@ namespace FuelStationApp {
             // 
             this.barButtonItem3.Caption = "New Transaction";
             this.barButtonItem3.Id = 14;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
+            // addEmployee
+            // 
+            this.addEmployee.Caption = "Employees Management System";
+            this.addEmployee.Id = 15;
+            this.addEmployee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("addEmployee.ImageOptions.Image")));
+            this.addEmployee.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("addEmployee.ImageOptions.LargeImage")));
+            this.addEmployee.Name = "addEmployee";
+            this.addEmployee.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addEmployee_ItemClick);
             // 
             // ribbonPage3
             // 
@@ -249,6 +266,7 @@ namespace FuelStationApp {
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup5,
             this.ribbonPageGroup7});
+            this.ribbonPage5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage5.ImageOptions.Image")));
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "Transactions";
             // 
@@ -256,18 +274,17 @@ namespace FuelStationApp {
             // 
             this.ribbonPageGroup5.ItemLinks.Add(this.btnViewTransaction);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
             // 
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            this.ribbonPageGroup7.Text = "ribbonPageGroup7";
             // 
             // ribbonPage6
             // 
             this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup6});
+            this.ribbonPage6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage6.ImageOptions.Image")));
             this.ribbonPage6.Name = "ribbonPage6";
             this.ribbonPage6.Text = "Ledger";
             // 
@@ -309,13 +326,6 @@ namespace FuelStationApp {
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // addEmployee
-            // 
-            this.addEmployee.Caption = "Employees Management System";
-            this.addEmployee.Id = 15;
-            this.addEmployee.Name = "addEmployee";
-            this.addEmployee.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addEmployee_ItemClick);
             // 
             // MainForm
             // 

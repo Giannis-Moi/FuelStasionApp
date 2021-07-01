@@ -114,15 +114,11 @@ namespace FuelStationApp.WUI {
             // 
             this.colCost.FieldName = "Cost";
             this.colCost.Name = "colCost";
-            this.colCost.Visible = true;
-            this.colCost.VisibleIndex = 5;
             // 
             // colItemType
             // 
             this.colItemType.FieldName = "ItemType";
             this.colItemType.Name = "colItemType";
-            this.colItemType.Visible = true;
-            this.colItemType.VisibleIndex = 6;
             // 
             // ViewTransactionFormLine
             // 

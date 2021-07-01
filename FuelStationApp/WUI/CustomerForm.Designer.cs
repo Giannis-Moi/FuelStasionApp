@@ -42,6 +42,7 @@ namespace FuelStationApp.WUI {
             this.btndelete = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
             this.btncancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlName.Properties)).BeginInit();
@@ -229,11 +230,24 @@ namespace FuelStationApp.WUI {
             this.btncancel.UseVisualStyleBackColor = true;
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSave.Location = new System.Drawing.Point(765, 510);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(78, 42);
+            this.btnSave.TabIndex = 13;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 576);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btncancel);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.btndelete);
@@ -280,5 +294,6 @@ namespace FuelStationApp.WUI {
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btncancel;
+        private System.Windows.Forms.Button btnSave;
     }
 }

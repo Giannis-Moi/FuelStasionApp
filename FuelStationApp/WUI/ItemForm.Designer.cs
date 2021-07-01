@@ -48,6 +48,7 @@ namespace FuelStationApp.WUI {
             this.btndelete = new System.Windows.Forms.Button();
             this.btnupdate = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
+            this.ctrlItemType = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlDescription.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
@@ -55,6 +56,7 @@ namespace FuelStationApp.WUI {
             ((System.ComponentModel.ISupportInitialize)(this.ctrlCost.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctrlItemType.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -310,11 +312,19 @@ namespace FuelStationApp.WUI {
             this.btnView.UseVisualStyleBackColor = true;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
+            // ctrlItemType
+            // 
+            this.ctrlItemType.Location = new System.Drawing.Point(12, 418);
+            this.ctrlItemType.Name = "ctrlItemType";
+            this.ctrlItemType.Size = new System.Drawing.Size(219, 20);
+            this.ctrlItemType.TabIndex = 23;
+            // 
             // ItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 450);
+            this.Controls.Add(this.ctrlItemType);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.btnupdate);
             this.Controls.Add(this.btndelete);
@@ -342,6 +352,7 @@ namespace FuelStationApp.WUI {
             ((System.ComponentModel.ISupportInitialize)(this.ctrlCost.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctrlItemType.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,5 +384,6 @@ namespace FuelStationApp.WUI {
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btnView;
+        private DevExpress.XtraEditors.TextEdit ctrlItemType;
     }
 }

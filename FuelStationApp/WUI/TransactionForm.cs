@@ -113,5 +113,13 @@ namespace FuelStationApp.WUI {
             AddListItems();
 
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e) {
+
+        }
+
+        private void ctrlItemType_SelectedIndexChanged(object sender, EventArgs e) {
+
+        }
     }
 }

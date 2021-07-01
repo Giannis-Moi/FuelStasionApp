@@ -34,13 +34,15 @@ namespace FuelStationApp.WUI {
             ctrlCost.Text = String.Empty;
         }
 
+        
 
 
 
         public void InsertItem() {
             string code = Convert.ToString(ctrlCode.EditValue);
             string description = Convert.ToString(ctrlDescription.EditValue);
-            //.Category = (ItemsTypeEnum)Enum.Parse(typeof(ItemsTypeEnum), comboBoxEdit1.Text);
+            //string itemType = Convert.ToString(ctrlItemType.EditValue);
+            //Category = (ItemsTypeEnum)Enum.Parse(typeof(ItemsTypeEnum), comboBoxEdit1.Text);
             string itemType = Convert.ToString(comboBoxEdit1.ToString());
             decimal price = Convert.ToDecimal(ctrlPrice.Text);
             decimal cost = Convert.ToDecimal(ctrlCost.Text);
