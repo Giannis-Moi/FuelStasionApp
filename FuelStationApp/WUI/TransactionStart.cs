@@ -29,6 +29,8 @@ namespace FuelStationApp.WUI {
                 Connection.Open();
                 DataTable datatable = new DataTable();
                 datatable.Columns.Add("CardNumber", typeof(string));
+                //The ExecuteReader() in C# SqlCommand Object sends the SQL statements to the Connection
+                //Object and populate a SqlDataReader Object based on the SQL statement.
                 reader = cmd.ExecuteReader();
                 datatable.Load(reader);
                 ctrlCardNumber.ValueMember = "CardNumber";
@@ -71,6 +73,7 @@ namespace FuelStationApp.WUI {
             CustomerSearch();
         }
         private void NewTransaction() {
+            //The selectedIndex property sets or returns the index of the selected option in a dropdown list
             if (ctrlCardNumber.SelectedIndex == -1) {
                 MessageBox.Show("Please Select a Card Number");
             }

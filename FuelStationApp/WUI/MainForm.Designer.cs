@@ -303,7 +303,6 @@ namespace FuelStationApp {
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "ribbonPageGroup6";
             // 
             // textEdit1
             // 
