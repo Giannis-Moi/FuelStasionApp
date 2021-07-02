@@ -33,15 +33,15 @@ namespace FuelStationApp.WUI {
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.ctrlIncome = new DevExpress.XtraEditors.TextEdit();
             this.ctrlExpenses = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.ctrlTotal = new DevExpress.XtraEditors.TextEdit();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlDateFrom.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlDateFrom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlDateΤο.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlDateΤο.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlIncome.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlExpenses.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctrlTotal.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ctrlDateFrom
@@ -117,7 +117,7 @@ namespace FuelStationApp.WUI {
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(12, 245);
+            this.labelControl3.Location = new System.Drawing.Point(12, 248);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(64, 21);
             this.labelControl3.TabIndex = 50;
@@ -172,45 +172,49 @@ namespace FuelStationApp.WUI {
             this.ctrlExpenses.Size = new System.Drawing.Size(337, 26);
             this.ctrlExpenses.TabIndex = 94;
             // 
-            // textEdit2
+            // ctrlTotal
             // 
-            this.textEdit2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textEdit2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textEdit2.EditValue = "";
-            this.textEdit2.Enabled = false;
-            this.textEdit2.Location = new System.Drawing.Point(136, 393);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
-            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.textEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit2.Size = new System.Drawing.Size(337, 26);
-            this.textEdit2.TabIndex = 95;
+            this.ctrlTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ctrlTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ctrlTotal.EditValue = "";
+            this.ctrlTotal.Enabled = false;
+            this.ctrlTotal.Location = new System.Drawing.Point(61, 393);
+            this.ctrlTotal.Name = "ctrlTotal";
+            this.ctrlTotal.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.ctrlTotal.Properties.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlTotal.Properties.Appearance.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.ctrlTotal.Properties.Appearance.Options.UseBackColor = true;
+            this.ctrlTotal.Properties.Appearance.Options.UseFont = true;
+            this.ctrlTotal.Properties.Appearance.Options.UseForeColor = true;
+            this.ctrlTotal.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.ctrlTotal.Size = new System.Drawing.Size(337, 26);
+            this.ctrlTotal.TabIndex = 95;
             // 
-            // labelControl6
+            // btnAdd
             // 
-            this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Appearance.Options.UseForeColor = true;
-            this.labelControl6.Location = new System.Drawing.Point(12, 395);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(43, 21);
-            this.labelControl6.TabIndex = 96;
-            this.labelControl6.Text = "Total:";
-            this.labelControl6.Click += new System.EventHandler(this.labelControl6_Click);
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdd.Appearance.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAdd.Appearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Appearance.Options.UseBackColor = true;
+            this.btnAdd.Appearance.Options.UseBorderColor = true;
+            this.btnAdd.Appearance.Options.UseFont = true;
+            this.btnAdd.Appearance.Options.UseForeColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(295, 204);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(214, 33);
+            this.btnAdd.TabIndex = 97;
+            this.btnAdd.Text = "Calculate the Ledger";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // LedgerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.textEdit2);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.ctrlTotal);
             this.Controls.Add(this.ctrlExpenses);
             this.Controls.Add(this.ctrlIncome);
             this.Controls.Add(this.labelControl5);
@@ -228,7 +232,7 @@ namespace FuelStationApp.WUI {
             ((System.ComponentModel.ISupportInitialize)(this.ctrlDateΤο.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlIncome.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlExpenses.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctrlTotal.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,7 +249,7 @@ namespace FuelStationApp.WUI {
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit ctrlIncome;
         private DevExpress.XtraEditors.TextEdit ctrlExpenses;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.TextEdit ctrlTotal;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
     }
 }

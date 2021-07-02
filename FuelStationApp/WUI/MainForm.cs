@@ -141,6 +141,14 @@ namespace FuelStationApp {
         private void addEmployee_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
             AddEmployee();
         }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LedgerForm ledgerForm = new LedgerForm();
+            _SqlConnection = new SqlConnection(ConnectionString);
+            ledgerForm.Connection = _SqlConnection;
+            ledgerForm.ShowDialog();
+        }
     }
     
 }
