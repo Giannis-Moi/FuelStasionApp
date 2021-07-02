@@ -19,7 +19,7 @@ namespace FuelStationApp.Impl {
 
             Name = name;
             Surname = surname;
-            //DateStart = dateStart;
+           // DateStart = dateStart;
            // DateEnd = dateEnd;
             Salary = salary;
         }

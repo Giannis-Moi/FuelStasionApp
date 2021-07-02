@@ -104,9 +104,9 @@ namespace FuelStationApp.WUI {
         }
 
         private void btnEditCustomer_Click(object sender, EventArgs e) {
-            
-
-            UpdateEntry("ID");
+            EditCustomer();
+          
+            // UpdateEntry("ID");
         }
 
         private void EditCustomer() {

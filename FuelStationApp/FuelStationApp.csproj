@@ -56,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\Entity.cs" />
+    <Compile Include="WUI\LedgerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WUI\LedgerForm.Designer.cs">
+      <DependentUpon>LedgerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WUI\ItemForm.resx">
       <DependentUpon>ItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WUI\LedgerForm.resx">
+      <DependentUpon>LedgerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

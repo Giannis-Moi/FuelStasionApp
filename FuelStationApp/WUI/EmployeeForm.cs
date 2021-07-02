@@ -37,8 +37,8 @@ namespace FuelStationApp.WUI {
         public void AddEmployee() {
             string employeeName = Convert.ToString(ctrlName.EditValue);
             string employeeSurname = Convert.ToString(ctrlSurname.EditValue);
-          // string employeeDateStart = Convert(ctrlDateStart.EditValue);
-           // string employeeDateEnd = Convert.ToString(ctrlDateEnd.EditValue);
+            //DateTime employeeDateStart = Convert.ToDateTime(ctrlDateStart.EditValue);
+           // DateTime employeeDateEnd = Convert.ToDateTime(ctrlDateEnd.EditValue);
             decimal employeeSalary = Convert.ToDecimal(ctrlSalary.EditValue);
 
 
@@ -47,7 +47,7 @@ namespace FuelStationApp.WUI {
 
 
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO Employees (ID, Name, Surname, Salary) VALUES (NEWID(), '" + newEmployee.Name + "', '" + newEmployee.Surname + "', '" + newEmployee.Salary + "')", Connection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Employees (ID, Name, Surname,Salary) VALUES (NEWID(), '" + newEmployee.Name + "', '" + newEmployee.Surname + "','" + newEmployee.Salary + "')", Connection);
             Connection.Open();
             cmd.ExecuteNonQuery();
             MessageBox.Show("Employees Succesfully Added");

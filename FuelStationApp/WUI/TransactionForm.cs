@@ -67,7 +67,7 @@ namespace FuelStationApp.WUI {
             decimal value = itemQuantity * itemPrice;
             decimal cost = itemQuantity * itemCost;
 
-            if (FuelQuantityCount > 1 && itemPrice > 50) {
+            if (FuelQuantityCount >= 1 && itemPrice > 50) {
                 DiscountDone = true;
             }
 
