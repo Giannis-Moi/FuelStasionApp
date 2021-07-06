@@ -29,7 +29,7 @@ namespace FuelStationApp.WUI {
             this.labelControlDateEnd = new DevExpress.XtraEditors.LabelControl();
             this.labelControlDateStart = new DevExpress.XtraEditors.LabelControl();
             this.labelControlSalary = new DevExpress.XtraEditors.LabelControl();
-            this.gridCustomers = new DevExpress.XtraGrid.GridControl();
+            this.gridEmployee = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -41,20 +41,18 @@ namespace FuelStationApp.WUI {
             this.ctrlName = new DevExpress.XtraEditors.TextEdit();
             this.ctrlSurname = new DevExpress.XtraEditors.TextEdit();
             this.ctrlSalary = new DevExpress.XtraEditors.TextEdit();
-            this.ctrlDateStart = new DevExpress.XtraEditors.TextEdit();
-            this.ctrlDateEnd = new DevExpress.XtraEditors.TextEdit();
             this.btnView = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.gridCustomers)).BeginInit();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlSurname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlSalary.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ctrlDateStart.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ctrlDateEnd.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControlName
@@ -63,9 +61,10 @@ namespace FuelStationApp.WUI {
             this.labelControlName.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelControlName.Appearance.Options.UseFont = true;
             this.labelControlName.Appearance.Options.UseForeColor = true;
-            this.labelControlName.Location = new System.Drawing.Point(723, 78);
+            this.labelControlName.Location = new System.Drawing.Point(964, 96);
+            this.labelControlName.Margin = new System.Windows.Forms.Padding(4);
             this.labelControlName.Name = "labelControlName";
-            this.labelControlName.Size = new System.Drawing.Size(41, 16);
+            this.labelControlName.Size = new System.Drawing.Size(55, 19);
             this.labelControlName.TabIndex = 3;
             this.labelControlName.Text = "Name:";
             // 
@@ -75,9 +74,10 @@ namespace FuelStationApp.WUI {
             this.labelControlSurname.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelControlSurname.Appearance.Options.UseFont = true;
             this.labelControlSurname.Appearance.Options.UseForeColor = true;
-            this.labelControlSurname.Location = new System.Drawing.Point(723, 136);
+            this.labelControlSurname.Location = new System.Drawing.Point(964, 167);
+            this.labelControlSurname.Margin = new System.Windows.Forms.Padding(4);
             this.labelControlSurname.Name = "labelControlSurname";
-            this.labelControlSurname.Size = new System.Drawing.Size(63, 16);
+            this.labelControlSurname.Size = new System.Drawing.Size(80, 19);
             this.labelControlSurname.TabIndex = 4;
             this.labelControlSurname.Text = "Surname:";
             // 
@@ -87,9 +87,10 @@ namespace FuelStationApp.WUI {
             this.labelControlDateEnd.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelControlDateEnd.Appearance.Options.UseFont = true;
             this.labelControlDateEnd.Appearance.Options.UseForeColor = true;
-            this.labelControlDateEnd.Location = new System.Drawing.Point(723, 236);
+            this.labelControlDateEnd.Location = new System.Drawing.Point(964, 290);
+            this.labelControlDateEnd.Margin = new System.Windows.Forms.Padding(4);
             this.labelControlDateEnd.Name = "labelControlDateEnd";
-            this.labelControlDateEnd.Size = new System.Drawing.Size(64, 16);
+            this.labelControlDateEnd.Size = new System.Drawing.Size(82, 19);
             this.labelControlDateEnd.TabIndex = 5;
             this.labelControlDateEnd.Text = "Date End:";
             // 
@@ -99,9 +100,10 @@ namespace FuelStationApp.WUI {
             this.labelControlDateStart.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelControlDateStart.Appearance.Options.UseFont = true;
             this.labelControlDateStart.Appearance.Options.UseForeColor = true;
-            this.labelControlDateStart.Location = new System.Drawing.Point(723, 185);
+            this.labelControlDateStart.Location = new System.Drawing.Point(964, 228);
+            this.labelControlDateStart.Margin = new System.Windows.Forms.Padding(4);
             this.labelControlDateStart.Name = "labelControlDateStart";
-            this.labelControlDateStart.Size = new System.Drawing.Size(75, 16);
+            this.labelControlDateStart.Size = new System.Drawing.Size(93, 19);
             this.labelControlDateStart.TabIndex = 6;
             this.labelControlDateStart.Text = "Date Start:";
             // 
@@ -111,20 +113,23 @@ namespace FuelStationApp.WUI {
             this.labelControlSalary.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelControlSalary.Appearance.Options.UseFont = true;
             this.labelControlSalary.Appearance.Options.UseForeColor = true;
-            this.labelControlSalary.Location = new System.Drawing.Point(723, 285);
+            this.labelControlSalary.Location = new System.Drawing.Point(964, 351);
+            this.labelControlSalary.Margin = new System.Windows.Forms.Padding(4);
             this.labelControlSalary.Name = "labelControlSalary";
-            this.labelControlSalary.Size = new System.Drawing.Size(96, 16);
+            this.labelControlSalary.Size = new System.Drawing.Size(119, 19);
             this.labelControlSalary.TabIndex = 7;
             this.labelControlSalary.Text = "Salary/Month:";
             // 
-            // gridCustomers
+            // gridEmployee
             // 
-            this.gridCustomers.Location = new System.Drawing.Point(12, 78);
-            this.gridCustomers.MainView = this.gridView1;
-            this.gridCustomers.Name = "gridCustomers";
-            this.gridCustomers.Size = new System.Drawing.Size(576, 357);
-            this.gridCustomers.TabIndex = 8;
-            this.gridCustomers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridEmployee.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gridEmployee.Location = new System.Drawing.Point(16, 96);
+            this.gridEmployee.MainView = this.gridView1;
+            this.gridEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.gridEmployee.Name = "gridEmployee";
+            this.gridEmployee.Size = new System.Drawing.Size(768, 439);
+            this.gridEmployee.TabIndex = 8;
+            this.gridEmployee.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -136,50 +141,61 @@ namespace FuelStationApp.WUI {
             this.colDateStart,
             this.colDateEnd,
             this.colSalary});
-            this.gridView1.GridControl = this.gridCustomers;
+            this.gridView1.DetailHeight = 431;
+            this.gridView1.GridControl = this.gridEmployee;
             this.gridView1.Name = "gridView1";
             // 
             // colID
             // 
             this.colID.FieldName = "ID";
+            this.colID.MinWidth = 27;
             this.colID.Name = "colID";
-            this.colID.Visible = true;
-            this.colID.VisibleIndex = 0;
+            this.colID.Width = 100;
             // 
             // colName
             // 
             this.colName.FieldName = "Name";
+            this.colName.MinWidth = 27;
             this.colName.Name = "colName";
             this.colName.Visible = true;
-            this.colName.VisibleIndex = 1;
+            this.colName.VisibleIndex = 0;
+            this.colName.Width = 100;
             // 
             // colSurname
             // 
             this.colSurname.FieldName = "Surname";
+            this.colSurname.MinWidth = 27;
             this.colSurname.Name = "colSurname";
             this.colSurname.Visible = true;
-            this.colSurname.VisibleIndex = 2;
+            this.colSurname.VisibleIndex = 1;
+            this.colSurname.Width = 100;
             // 
             // colDateStart
             // 
             this.colDateStart.FieldName = "DateStart";
+            this.colDateStart.MinWidth = 27;
             this.colDateStart.Name = "colDateStart";
             this.colDateStart.Visible = true;
-            this.colDateStart.VisibleIndex = 3;
+            this.colDateStart.VisibleIndex = 2;
+            this.colDateStart.Width = 100;
             // 
             // colDateEnd
             // 
             this.colDateEnd.FieldName = "DateEnd";
+            this.colDateEnd.MinWidth = 27;
             this.colDateEnd.Name = "colDateEnd";
             this.colDateEnd.Visible = true;
-            this.colDateEnd.VisibleIndex = 4;
+            this.colDateEnd.VisibleIndex = 3;
+            this.colDateEnd.Width = 100;
             // 
             // colSalary
             // 
             this.colSalary.FieldName = "Salary";
+            this.colSalary.MinWidth = 27;
             this.colSalary.Name = "colSalary";
             this.colSalary.Visible = true;
-            this.colSalary.VisibleIndex = 5;
+            this.colSalary.VisibleIndex = 4;
+            this.colSalary.Width = 100;
             // 
             // labelControl1
             // 
@@ -189,54 +205,45 @@ namespace FuelStationApp.WUI {
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.labelControl1.AppearancePressed.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(305, 12);
+            this.labelControl1.Location = new System.Drawing.Point(407, 15);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(310, 23);
+            this.labelControl1.Size = new System.Drawing.Size(388, 29);
             this.labelControl1.TabIndex = 9;
             this.labelControl1.Text = "Employees Management System";
             // 
             // ctrlName
             // 
-            this.ctrlName.Location = new System.Drawing.Point(825, 74);
+            this.ctrlName.Location = new System.Drawing.Point(1100, 91);
+            this.ctrlName.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlName.Name = "ctrlName";
-            this.ctrlName.Size = new System.Drawing.Size(152, 20);
+            this.ctrlName.Size = new System.Drawing.Size(203, 22);
             this.ctrlName.TabIndex = 10;
             // 
             // ctrlSurname
             // 
-            this.ctrlSurname.Location = new System.Drawing.Point(825, 135);
+            this.ctrlSurname.Location = new System.Drawing.Point(1100, 166);
+            this.ctrlSurname.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlSurname.Name = "ctrlSurname";
-            this.ctrlSurname.Size = new System.Drawing.Size(152, 20);
+            this.ctrlSurname.Size = new System.Drawing.Size(203, 22);
             this.ctrlSurname.TabIndex = 11;
             // 
             // ctrlSalary
             // 
-            this.ctrlSalary.Location = new System.Drawing.Point(825, 284);
+            this.ctrlSalary.Location = new System.Drawing.Point(1100, 350);
+            this.ctrlSalary.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlSalary.Name = "ctrlSalary";
-            this.ctrlSalary.Size = new System.Drawing.Size(152, 20);
+            this.ctrlSalary.Size = new System.Drawing.Size(203, 22);
             this.ctrlSalary.TabIndex = 12;
-            // 
-            // ctrlDateStart
-            // 
-            this.ctrlDateStart.Location = new System.Drawing.Point(825, 184);
-            this.ctrlDateStart.Name = "ctrlDateStart";
-            this.ctrlDateStart.Size = new System.Drawing.Size(152, 20);
-            this.ctrlDateStart.TabIndex = 13;
-            // 
-            // ctrlDateEnd
-            // 
-            this.ctrlDateEnd.Location = new System.Drawing.Point(825, 232);
-            this.ctrlDateEnd.Name = "ctrlDateEnd";
-            this.ctrlDateEnd.Size = new System.Drawing.Size(152, 20);
-            this.ctrlDateEnd.TabIndex = 14;
             // 
             // btnView
             // 
             this.btnView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnView.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnView.Location = new System.Drawing.Point(626, 346);
+            this.btnView.Location = new System.Drawing.Point(835, 426);
+            this.btnView.Margin = new System.Windows.Forms.Padding(4);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(78, 42);
+            this.btnView.Size = new System.Drawing.Size(99, 30);
             this.btnView.TabIndex = 15;
             this.btnView.Text = "View Record";
             this.btnView.UseVisualStyleBackColor = true;
@@ -246,9 +253,10 @@ namespace FuelStationApp.WUI {
             // 
             this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnInsert.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnInsert.Location = new System.Drawing.Point(723, 346);
+            this.btnInsert.Location = new System.Drawing.Point(964, 426);
+            this.btnInsert.Margin = new System.Windows.Forms.Padding(4);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(78, 42);
+            this.btnInsert.Size = new System.Drawing.Size(99, 30);
             this.btnInsert.TabIndex = 16;
             this.btnInsert.Text = "Insert Record";
             this.btnInsert.UseVisualStyleBackColor = true;
@@ -258,67 +266,87 @@ namespace FuelStationApp.WUI {
             // 
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnEdit.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnEdit.Location = new System.Drawing.Point(825, 346);
+            this.btnEdit.Location = new System.Drawing.Point(1100, 426);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(78, 42);
+            this.btnEdit.Size = new System.Drawing.Size(99, 30);
             this.btnEdit.TabIndex = 17;
             this.btnEdit.Text = "Edit Record";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btndelete
             // 
             this.btndelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btndelete.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btndelete.Location = new System.Drawing.Point(918, 346);
+            this.btndelete.Location = new System.Drawing.Point(1224, 426);
+            this.btndelete.Margin = new System.Windows.Forms.Padding(4);
             this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(78, 42);
+            this.btndelete.Size = new System.Drawing.Size(99, 30);
             this.btndelete.TabIndex = 18;
             this.btndelete.Text = "Delete  Record";
             this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnCancel.Location = new System.Drawing.Point(899, 466);
+            this.btnCancel.Location = new System.Drawing.Point(1199, 574);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(78, 42);
+            this.btnCancel.Size = new System.Drawing.Size(99, 30);
             this.btnCancel.TabIndex = 19;
-            this.btnCancel.Text = "Ok";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(1100, 290);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker2.TabIndex = 21;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(1100, 228);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(203, 22);
+            this.dateTimePicker3.TabIndex = 22;
+            // 
             // EmployeeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1057, 542);
+            this.ClientSize = new System.Drawing.Size(1409, 667);
+            this.Controls.Add(this.dateTimePicker3);
+            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btndelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnView);
-            this.Controls.Add(this.ctrlDateEnd);
-            this.Controls.Add(this.ctrlDateStart);
             this.Controls.Add(this.ctrlSalary);
             this.Controls.Add(this.ctrlSurname);
             this.Controls.Add(this.ctrlName);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.gridCustomers);
+            this.Controls.Add(this.gridEmployee);
             this.Controls.Add(this.labelControlSalary);
             this.Controls.Add(this.labelControlDateStart);
             this.Controls.Add(this.labelControlDateEnd);
             this.Controls.Add(this.labelControlSurname);
             this.Controls.Add(this.labelControlName);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeForm";
             this.Text = "EmployeeForm";
-            ((System.ComponentModel.ISupportInitialize)(this.gridCustomers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlSurname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlSalary.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ctrlDateStart.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ctrlDateEnd.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,7 +359,7 @@ namespace FuelStationApp.WUI {
         private DevExpress.XtraEditors.LabelControl labelControlDateEnd;
         private DevExpress.XtraEditors.LabelControl labelControlDateStart;
         private DevExpress.XtraEditors.LabelControl labelControlSalary;
-        private DevExpress.XtraGrid.GridControl gridCustomers;
+        private DevExpress.XtraGrid.GridControl gridEmployee;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
@@ -340,8 +368,6 @@ namespace FuelStationApp.WUI {
         private DevExpress.XtraEditors.TextEdit ctrlName;
         private DevExpress.XtraEditors.TextEdit ctrlSurname;
         private DevExpress.XtraEditors.TextEdit ctrlSalary;
-        private DevExpress.XtraEditors.TextEdit ctrlDateStart;
-        private DevExpress.XtraEditors.TextEdit ctrlDateEnd;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Button btnEdit;
@@ -350,5 +376,7 @@ namespace FuelStationApp.WUI {
         private DevExpress.XtraGrid.Columns.GridColumn colDateStart;
         private DevExpress.XtraGrid.Columns.GridColumn colDateEnd;
         private DevExpress.XtraGrid.Columns.GridColumn colSalary;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
     }
 }

@@ -121,6 +121,9 @@
   <data name="DeleteCustomer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\queries\deletecustomer.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="DeleteEmployee" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\queries\deleteemployee.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="DeleteItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\queries\deleteitem.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

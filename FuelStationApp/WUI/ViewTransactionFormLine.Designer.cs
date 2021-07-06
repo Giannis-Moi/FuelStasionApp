@@ -46,18 +46,21 @@ namespace FuelStationApp.WUI {
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.labelControl1.AppearancePressed.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(158, 12);
+            this.labelControl1.Location = new System.Drawing.Point(211, 15);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(544, 29);
+            this.labelControl1.Size = new System.Drawing.Size(687, 36);
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Fuel Station Management System Application";
             // 
             // gridTransactionLine
             // 
-            this.gridTransactionLine.Location = new System.Drawing.Point(12, 59);
+            this.gridTransactionLine.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridTransactionLine.Location = new System.Drawing.Point(16, 73);
             this.gridTransactionLine.MainView = this.gridViewTransactionLine;
+            this.gridTransactionLine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridTransactionLine.Name = "gridTransactionLine";
-            this.gridTransactionLine.Size = new System.Drawing.Size(776, 352);
+            this.gridTransactionLine.Size = new System.Drawing.Size(1035, 433);
             this.gridTransactionLine.TabIndex = 20;
             this.gridTransactionLine.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewTransactionLine});
@@ -72,61 +75,73 @@ namespace FuelStationApp.WUI {
             this.colValue,
             this.colCost,
             this.colItemType});
+            this.gridViewTransactionLine.DetailHeight = 431;
             this.gridViewTransactionLine.GridControl = this.gridTransactionLine;
             this.gridViewTransactionLine.Name = "gridViewTransactionLine";
             // 
             // colTransactionId
             // 
             this.colTransactionId.FieldName = "TransactionId";
+            this.colTransactionId.MinWidth = 27;
             this.colTransactionId.Name = "colTransactionId";
-            this.colTransactionId.Visible = true;
-            this.colTransactionId.VisibleIndex = 0;
+            this.colTransactionId.Width = 100;
             // 
             // colItemID
             // 
             this.colItemID.FieldName = "ItemID";
+            this.colItemID.MinWidth = 27;
             this.colItemID.Name = "colItemID";
-            this.colItemID.Visible = true;
-            this.colItemID.VisibleIndex = 1;
+            this.colItemID.Width = 100;
             // 
             // colQuantity
             // 
             this.colQuantity.FieldName = "Quantity";
+            this.colQuantity.MinWidth = 27;
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.Visible = true;
-            this.colQuantity.VisibleIndex = 2;
+            this.colQuantity.VisibleIndex = 0;
+            this.colQuantity.Width = 100;
             // 
             // colItemPrice
             // 
             this.colItemPrice.FieldName = "ItemPrice";
+            this.colItemPrice.MinWidth = 27;
             this.colItemPrice.Name = "colItemPrice";
             this.colItemPrice.Visible = true;
-            this.colItemPrice.VisibleIndex = 3;
+            this.colItemPrice.VisibleIndex = 1;
+            this.colItemPrice.Width = 100;
             // 
             // colValue
             // 
             this.colValue.FieldName = "Value";
+            this.colValue.MinWidth = 27;
             this.colValue.Name = "colValue";
             this.colValue.Visible = true;
-            this.colValue.VisibleIndex = 4;
+            this.colValue.VisibleIndex = 2;
+            this.colValue.Width = 100;
             // 
             // colCost
             // 
             this.colCost.FieldName = "Cost";
+            this.colCost.MinWidth = 27;
             this.colCost.Name = "colCost";
+            this.colCost.Width = 100;
             // 
             // colItemType
             // 
             this.colItemType.FieldName = "ItemType";
+            this.colItemType.MinWidth = 27;
             this.colItemType.Name = "colItemType";
+            this.colItemType.Width = 100;
             // 
             // ViewTransactionFormLine
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.gridTransactionLine);
             this.Controls.Add(this.labelControl1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ViewTransactionFormLine";
             this.Text = "ViewTransactionFormLine";
             this.Load += new System.EventHandler(this.ViewTransactionFormLine_Load);

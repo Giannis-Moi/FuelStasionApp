@@ -61,23 +61,20 @@ namespace FuelStationApp.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to using System;
-        ///using System.Collections.Generic;
-        ///using System.Linq;
-        ///using System.Text;
-        ///using System.Threading.Tasks;
-        ///
-        ///namespace FuelStationApp.Queries
-        ///{
-        ///    class DeleteCustomer
-        ///    {
-        ///    }
-        ///}
-        ///.
+        ///   Looks up a localized string similar to DELETE FROM [Customers] WHERE ID=&apos;{0}&apos;.
         /// </summary>
         internal static string DeleteCustomer {
             get {
                 return ResourceManager.GetString("DeleteCustomer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DELETE FROM [Employees] WHERE ID=&apos;{0}&apos;.
+        /// </summary>
+        internal static string DeleteEmployee {
+            get {
+                return ResourceManager.GetString("DeleteEmployee", resourceCulture);
             }
         }
         

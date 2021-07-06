@@ -39,13 +39,16 @@ namespace FuelStationApp.WUI {
 
 
         public void InsertItem() {
+
+
             string code = Convert.ToString(ctrlCode.EditValue);
             string description = Convert.ToString(ctrlDescription.EditValue);
             //string itemType = Convert.ToString(ctrlItemType.EditValue);
             //Category = (ItemsTypeEnum)Enum.Parse(typeof(ItemsTypeEnum), comboBoxEdit1.Text);
-            string itemType = Convert.ToString(comboBoxEdit1.ToString());
+            string itemType = Convert.ToString(comboBoxEdit1.EditValue);
             decimal price = Convert.ToDecimal(ctrlPrice.Text);
             decimal cost = Convert.ToDecimal(ctrlCost.Text);
+            int type = Convert.ToInt32(Enum.Parse(typeof(ItemsTypeEnum), itemType, true));
 
             Items newItem = new Items(code, description, itemType, price, cost);
 
@@ -56,7 +59,7 @@ namespace FuelStationApp.WUI {
                   && decimal.TryParse(Convert.ToString(ctrlPrice.EditValue), out cost) && cost > 0) {
 
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO Items (ID, Code, Description, ItemType, Price ,Cost) VALUES (NEWID(), '" + newItem.Code + "', '" + newItem.Description + "', '" + newItem.ItemType + "', '" + newItem.Price+ "', '" + newItem.Cost + "')", Connection);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Items (ID, Code, Description, ItemType, Price ,Cost) VALUES (NEWID(), '" + newItem.Code + "', '" + newItem.Description + "', " + type + ", '" + newItem.Price+ "', '" + newItem.Cost + "')", Connection);
                 Connection.Open();
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Items Succesfully Added");
@@ -110,10 +113,18 @@ namespace FuelStationApp.WUI {
             }
         }
         public void UpdateRecord() {
+
+            
+
             Guid id = Guid.Parse(Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ID")));
             string code = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Code"));
             string description = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Description"));
             string itemType = Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ItemType"));
+            int type = Convert.ToInt32(Enum.Parse(typeof(ItemsTypeEnum), itemType, true));
+
+
+            String.Format("{0:0.00}", 123.4);
+
             decimal price;
             decimal cost;
             if (!string.IsNullOrWhiteSpace(code) && !string.IsNullOrWhiteSpace(description) && !string.IsNullOrWhiteSpace(itemType)
@@ -121,9 +132,10 @@ namespace FuelStationApp.WUI {
                   decimal.TryParse(Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Price")), out price) && price > 0
                   && decimal.TryParse(Convert.ToString(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Cost")), out cost) && cost > 0) {
 
-                SqlCommand cmd = new SqlCommand(string.Format(Resources.UpdateItem, code, description, itemType, price, cost, id ), Connection);
+                SqlCommand cmd = new SqlCommand(string.Format(Resources.UpdateItem, code, description, type, price, cost, id ), Connection);
                 Connection.Open();
                 cmd.ExecuteNonQuery();
+                Connection.Close();
                 MessageBox.Show("Record Succesfully Updated!");
             }
             else {

@@ -43,17 +43,20 @@ namespace FuelStationApp.WUI {
             this.ctrlCardNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ctrlCardNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctrlCardNumber.FormattingEnabled = true;
-            this.ctrlCardNumber.Location = new System.Drawing.Point(554, 82);
+            this.ctrlCardNumber.Location = new System.Drawing.Point(739, 101);
+            this.ctrlCardNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ctrlCardNumber.Name = "ctrlCardNumber";
-            this.ctrlCardNumber.Size = new System.Drawing.Size(214, 29);
+            this.ctrlCardNumber.Size = new System.Drawing.Size(284, 31);
             this.ctrlCardNumber.TabIndex = 90;
             // 
             // gridCustomers
             // 
-            this.gridCustomers.Location = new System.Drawing.Point(12, 34);
+            this.gridCustomers.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridCustomers.Location = new System.Drawing.Point(16, 42);
             this.gridCustomers.MainView = this.gridViewCustomer;
+            this.gridCustomers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridCustomers.Name = "gridCustomers";
-            this.gridCustomers.Size = new System.Drawing.Size(495, 311);
+            this.gridCustomers.Size = new System.Drawing.Size(660, 383);
             this.gridCustomers.TabIndex = 91;
             this.gridCustomers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewCustomer});
@@ -65,36 +68,43 @@ namespace FuelStationApp.WUI {
             this.colName,
             this.colSurname,
             this.colCardNumber});
+            this.gridViewCustomer.DetailHeight = 431;
             this.gridViewCustomer.GridControl = this.gridCustomers;
             this.gridViewCustomer.Name = "gridViewCustomer";
             // 
             // colID
             // 
             this.colID.FieldName = "ID";
+            this.colID.MinWidth = 27;
             this.colID.Name = "colID";
-            this.colID.Visible = true;
-            this.colID.VisibleIndex = 0;
+            this.colID.Width = 100;
             // 
             // colName
             // 
             this.colName.FieldName = "Name";
+            this.colName.MinWidth = 27;
             this.colName.Name = "colName";
             this.colName.Visible = true;
-            this.colName.VisibleIndex = 1;
+            this.colName.VisibleIndex = 0;
+            this.colName.Width = 100;
             // 
             // colSurname
             // 
             this.colSurname.FieldName = "Surname";
+            this.colSurname.MinWidth = 27;
             this.colSurname.Name = "colSurname";
             this.colSurname.Visible = true;
-            this.colSurname.VisibleIndex = 2;
+            this.colSurname.VisibleIndex = 1;
+            this.colSurname.Width = 100;
             // 
             // colCardNumber
             // 
             this.colCardNumber.FieldName = "CardNumber";
+            this.colCardNumber.MinWidth = 27;
             this.colCardNumber.Name = "colCardNumber";
             this.colCardNumber.Visible = true;
-            this.colCardNumber.VisibleIndex = 3;
+            this.colCardNumber.VisibleIndex = 2;
+            this.colCardNumber.Width = 100;
             // 
             // labelControlCardNumber
             // 
@@ -102,9 +112,10 @@ namespace FuelStationApp.WUI {
             this.labelControlCardNumber.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelControlCardNumber.Appearance.Options.UseFont = true;
             this.labelControlCardNumber.Appearance.Options.UseForeColor = true;
-            this.labelControlCardNumber.Location = new System.Drawing.Point(604, 46);
+            this.labelControlCardNumber.Location = new System.Drawing.Point(805, 57);
+            this.labelControlCardNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelControlCardNumber.Name = "labelControlCardNumber";
-            this.labelControlCardNumber.Size = new System.Drawing.Size(89, 16);
+            this.labelControlCardNumber.Size = new System.Drawing.Size(115, 19);
             this.labelControlCardNumber.TabIndex = 92;
             this.labelControlCardNumber.Text = "Card Number:";
             // 
@@ -112,9 +123,10 @@ namespace FuelStationApp.WUI {
             // 
             this.btnSearchCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnSearchCustomer.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSearchCustomer.Location = new System.Drawing.Point(589, 130);
+            this.btnSearchCustomer.Location = new System.Drawing.Point(785, 160);
+            this.btnSearchCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchCustomer.Name = "btnSearchCustomer";
-            this.btnSearchCustomer.Size = new System.Drawing.Size(148, 42);
+            this.btnSearchCustomer.Size = new System.Drawing.Size(197, 52);
             this.btnSearchCustomer.TabIndex = 93;
             this.btnSearchCustomer.Text = "Search Customer";
             this.btnSearchCustomer.UseVisualStyleBackColor = true;
@@ -124,9 +136,10 @@ namespace FuelStationApp.WUI {
             // 
             this.btnNewTransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.btnNewTransaction.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnNewTransaction.Location = new System.Drawing.Point(589, 211);
+            this.btnNewTransaction.Location = new System.Drawing.Point(785, 260);
+            this.btnNewTransaction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNewTransaction.Name = "btnNewTransaction";
-            this.btnNewTransaction.Size = new System.Drawing.Size(148, 42);
+            this.btnNewTransaction.Size = new System.Drawing.Size(197, 52);
             this.btnNewTransaction.TabIndex = 94;
             this.btnNewTransaction.Text = "New Transaction";
             this.btnNewTransaction.UseVisualStyleBackColor = true;
@@ -134,14 +147,15 @@ namespace FuelStationApp.WUI {
             // 
             // TransactionStart
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnNewTransaction);
             this.Controls.Add(this.btnSearchCustomer);
             this.Controls.Add(this.labelControlCardNumber);
             this.Controls.Add(this.gridCustomers);
             this.Controls.Add(this.ctrlCardNumber);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TransactionStart";
             this.Text = "TransactionStart";
             this.Load += new System.EventHandler(this.TransactionStart_Load);
