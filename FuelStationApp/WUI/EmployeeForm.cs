@@ -154,8 +154,8 @@ namespace FuelStationApp.WUI {
                 if (sqlSetLines.Count > 0) {
                     sql = "UPDATE [EMPLOYEES] " + " SET " + sqlSet + " WHERE " + string.Join(",", sqlWhereLines);
                     Connection.Open();
-                   
-                    SqlCommand command = new SqlCommand(sql, Connection);
+                    
+                     SqlCommand command = new SqlCommand(sql, Connection);
                     int rowsAffected = command.ExecuteNonQuery();
                    
                     Connection.Close();
@@ -199,6 +199,8 @@ namespace FuelStationApp.WUI {
 
         private void btnEdit_Click(object sender, EventArgs e) {
             UpdateEntry("ID");
+            PopulateDataGridView();
+
         }
     }
     }
